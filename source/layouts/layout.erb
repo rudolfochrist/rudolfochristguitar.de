@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= current_page.data.title  "Middleman" %></title>
+    <%= stylesheet_link_tag "site" %>
+    <%= javascript_include_tag "site" %>
+  </head>
+  <body>
+    <header>
+      <% link_to 'index.html' do%>
+      <h1>Sebastian <span class="boxed">Rudolfo</span> Christ</h1>
+      <p>Traditional <span class="boxed">Acoustic Jazz</span> Guitarist</p>
+      <% end %>
+    </header>
+    <nav>
+      <ul>
+        <li class="<%= active_nav '/about' %>"><%= link_to "About Me", "/about.html" %></li>
+        <li class="<%= active_nav '/projects' %>"><%= link_to "Projects", "/projects.html" %></li>
+        <li class="<%= active_nav '/dates' %>"><%= link_to "Dates", "/dates.html" %></li>
+        <li class="<%= active_nav '/media' %>"><%= link_to "Media", "/media.html" %></li>
+        <li class="<%= active_nav '/contact' %>"><%= link_to "Contact", "/contact.html" %></li>
+      </ul>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <ul>
+        <li>Copyright &#169; <%= year_range %> Sebastian Christ</li>
+        <li><%= link_to "Imprint", "imprint.html" %></li>
+        <li><%= link_to "Privacy Policy", "privacy-policy.html" %></li>
+      </ul>
+    </footer>
+  </body>
+</html>

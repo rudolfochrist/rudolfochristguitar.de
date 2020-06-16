@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poiret+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+body {
+    max-width: 978px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover, .active {
+    text-decoration: none;
+    border-bottom: 2px solid #333;
+}
+
+.boxed {
+    border: 2px solid #333;
+    padding: 1px 5px;
+}
+
+header {
+    margin: 72px auto 72px;
+    text-transform: uppercase;
+    a:hover {
+        text-decoration: none;
+    }
+    a {
+        font-family: 'Poiret One', cursive;
+        h1 {
+            font-size: 40pt;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+nav, footer {
+    li {
+        display: inline-block;
+    }
+}
+
+nav {
+    font-size: 17pt;
+    margin: 20px auto;
+    text-transform: uppercase;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        li {
+            font-family: 'Poiret One', cursive;
+        }
+    }
+}
+
+footer {
+    font-size: 10pt;
+    margin-bottom: 18px;
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        li {
+            margin-left: 12px;
+        }
+    }
+}
+
+main {
+    overflow: hidden;
+    width: 100%;
+    min-height: 350px;
+    p {
+        margin-bottom: 18px;
+        text-align: justify;
+    }
+}
