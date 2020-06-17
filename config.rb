@@ -57,3 +57,9 @@ end
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+after_build do
+  src_redirects = File.join config[:source], "_redirects"
+  dst_redirects = File.join config[:build_dir], "_redirects"
+  FileUtils.cp src_redirects, dst_redirects
+end
