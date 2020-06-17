@@ -6,6 +6,7 @@ activate :autoprefixer do |prefix|
 end
 
 activate :directory_indexes
+activate :i18n, mount_at_root: false
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
@@ -45,7 +46,7 @@ helpers do
     if path == "/" and current_page.url == "/"
       return "active"
     end
-    return "active" if current_page.url.start_with? path
+    return "active" if current_page.url.include? path
   end
 end
 

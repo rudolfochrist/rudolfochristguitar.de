@@ -45,10 +45,16 @@ header {
     }
 }
 
-nav, footer {
+nav, footer, #lang-select {
     li {
         display: inline-block;
     }
+}
+
+#lang-select {
+    position: absolute;
+    top: 12px;
+    left: 12px;
 }
 
 nav {
