@@ -91,3 +91,12 @@ main {
         text-align: justify;
     }
 }
+
+.portrait {
+    float: right;
+    width: 450px;
+    padding: 20px 0 20px 0;
+    img {
+        margin-left: 12%;
+    }
+}
