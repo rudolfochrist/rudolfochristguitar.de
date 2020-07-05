@@ -18,7 +18,7 @@ a {
     font-weight: bold;
 }
 
-a:hover, .active {
+li:hover, .active {
     text-decoration: none;
     border-bottom: 2px solid #333;
 }
@@ -29,7 +29,7 @@ a:hover, .active {
 }
 
 header {
-    margin: 72px auto 72px;
+    margin: 72px auto 52px;
     text-transform: uppercase;
     a:hover {
         text-decoration: none;
@@ -46,8 +46,14 @@ header {
 }
 
 nav, footer, #lang-select {
+    height: 36px;
     li {
         display: inline-block;
+        height: 36px;
+        a {
+            display: inline-block;
+            height: 29px;
+        }
     }
 }
 
@@ -59,7 +65,7 @@ nav, footer, #lang-select {
 
 nav {
     font-size: 17pt;
-    margin: 40px auto;
+    margin: 30px auto;
     text-transform: uppercase;
     ul {
         display: flex;
