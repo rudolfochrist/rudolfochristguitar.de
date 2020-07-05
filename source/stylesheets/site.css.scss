@@ -59,7 +59,7 @@ nav, footer, #lang-select {
 
 nav {
     font-size: 17pt;
-    margin: 20px auto;
+    margin: 40px auto;
     text-transform: uppercase;
     ul {
         display: flex;
@@ -98,5 +98,21 @@ main {
     padding: 20px 0 20px 0;
     img {
         margin-left: 12%;
+    }
+}
+
+//https://medium.com/@kimcodeashian/simple-css-solutions-how-to-resize-images-with-different-dimensions-without-cropping-eb744e93246d
+.fullsize-image {
+    position: relative;
+    width: 978px;
+    height: 350px;
+    overflow: hidden;
+    img {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
