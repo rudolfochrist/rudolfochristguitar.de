@@ -22,8 +22,16 @@
         <li class="<%= active_nav '/about' %>"><%= link_to t(:about), "/about.html" %></li>
         <li class="<%= active_nav '/combos' %>"><%= link_to t(:combos), "/combos.html" %></li>
         <li class="<%= active_nav '/tour' %>"><%= link_to t(:tour), "/tour.html" %></li>
-        <li class="<%= active_nav '/media' %>"><%= link_to t(:media), "/media.html" %></li>
         <li class="<%= active_nav '/contact' %>"><%= link_to t(:contact), "/contact.html" %></li>
+        <li>
+          <% link_to 'https://www.instagram.com/rudolfo.christ/' do %>
+          <%= image_tag 'insta-logo.png', width: '29px', height: '29px' %>
+          <% end %>
+        </li>
+        <li>
+          <% link_to 'https://youtube.com/channel/UCJ2B6SILfh03Iz1PbYaXvTg' do %>
+          <%= image_tag 'yt-logo.png', height: '29dp' %>
+          <% end %>
       </ul>
     </nav>
     <main>
