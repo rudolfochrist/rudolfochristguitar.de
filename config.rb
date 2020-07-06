@@ -59,7 +59,10 @@ end
 # end
 
 after_build do
-  src_redirects = File.join config[:source], "_redirects"
-  dst_redirects = File.join config[:build_dir], "_redirects"
-  FileUtils.cp src_redirects, dst_redirects
+  files_to_cp = ["_redirects", "fonts"]
+  files_to_cp.each do |file|
+    src = File.join config[:source], file
+    dest = File.join config[:build_dir], file
+    FileUtils.cp_r src, dest
+  end
 end
