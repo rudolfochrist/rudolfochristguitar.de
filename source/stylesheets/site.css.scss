@@ -120,3 +120,11 @@ main {
         transform: translate(-50%, -50%);
     }
 }
+
+section {
+    min-height: 106px;
+}
+
+.hidden {
+    display: none;
+}
