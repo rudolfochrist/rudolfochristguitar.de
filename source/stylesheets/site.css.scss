@@ -132,3 +132,26 @@ section {
 .hidden {
     display: none;
 }
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Poiret One', cursive;
+}
+
+li.event {
+    margin: 32px 4px;
+    padding-left: 12px;
+    border-left: 2px solid #333;
+    list-style: none;
+    .date {
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    .event-name {
+        text-transform: uppercase;
+        font-size: 14pt;
+    }
+    .event-location {
+        font-style: italic;
+        font-size: 10pt;
+    }
+}
