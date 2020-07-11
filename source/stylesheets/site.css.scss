@@ -16,7 +16,7 @@ a {
     font-weight: bold;
 }
 
-li:hover, .active {
+nav li:hover, footer li:hover, .active {
     text-decoration: none;
     border-bottom: 2px solid #333;
 }
@@ -123,6 +123,10 @@ main {
 
 section {
     min-height: 106px;
+    margin-top: 32px;
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 .hidden {

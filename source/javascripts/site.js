@@ -9,14 +9,19 @@ function docReady(fn) {
   }
 }
 
-function showNoUpcomingEventsNote() {
-  const upcomingEvents = document.getElementById("upcoming-events");
-  const upcomingNote = document.getElementById("no-upcoming-note");
-  if (upcomingEvents && upcomingEvents.children.length === 0) {
-    upcomingNote.classList.remove('hidden');
+function sortEvents() {
+  const $events = document.getElementById("events").children;
+  const $upcomingContainer = document.getElementById("upcoming-events");
+  const today = new Date();
+
+  for (const $event of $events) {
+    const eventDate = new Date($event.dataset['date']);
+    if (eventDate >= today) {
+      $upcomingContainer.append($event);
+    }
   }
 }
 
 docReady(() => {
-  showNoUpcomingEventsNote();
+  sortEvents();
 });
