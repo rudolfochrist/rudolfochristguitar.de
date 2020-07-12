@@ -17,6 +17,8 @@ title: Agenda
         <%= item.date.strftime("%d") %>
         <%= t(item.date.strftime("%b").to_sym)%>
         <%= item.date.strftime("%Y") %>
+        &mdash;
+        <%= item.date.strftime("%H:%M") %>
       </div>
       <div class="event-name">
         <%= item.title %>

@@ -20,6 +20,11 @@ function sortEvents() {
       $upcomingContainer.append($event);
     }
   }
+
+  const $noUpcomingNote = document.getElementById("no-upcoming-note");
+  if ($upcomingContainer.children.length === 0) {
+    $noUpcomingNote.classList.remove("hidden");
+  }
 }
 
 docReady(() => {
