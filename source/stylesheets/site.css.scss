@@ -96,66 +96,77 @@ main {
     }
 }
 
-.portrait {
-    float: right;
-    width: 450px;
-    padding: 20px 0 20px 0;
-    img {
-        margin-left: 12%;
+.about {
+    .text {
+        width: 65%;
+        float: left;
+        padding-top: 12px;
+    }
+    .portrait {
+        width: 35%;
+        float: left;
     }
 }
 
-//https://medium.com/@kimcodeashian/simple-css-solutions-how-to-resize-images-with-different-dimensions-without-cropping-eb744e93246d
-.fullsize-image {
-    position: relative;
-    width: 978px;
-    height: 350px;
-    overflow: hidden;
-    img {
-        position: absolute;
-        max-width: 100%;
-        width: 100%;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
+ //https://medium.com/@kimcodeashian/simple-css-solutions-how-to-resize-images-with-different-dimensions-without-cropping-eb744e93246d
+ .fullsize-image {
+     position: relative;
+     width: 978px;
+     height: 350px;
+     overflow: hidden;
+     img {
+         position: absolute;
+         max-width: 100%;
+         width: 100%;
+         top: 65%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+     }
+ }
 
-section {
-    min-height: 106px;
-    margin-top: 32px;
-    a:hover {
-        text-decoration: underline;
-    }
-}
+ section {
+     min-height: 106px;
+     margin-top: 32px;
+     a:hover {
+         text-decoration: underline;
+     }
+ }
 
-.hidden {
-    display: none;
-}
+ section.combo {
+     margin-top: 46px;
+     h2 {
+         border-bottom: 1px solid #333;
+         margin-bottom: 14px;
+     }
+ }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Poiret One', cursive;
-}
+ .hidden {
+     display: none;
+ }
 
-#no-upcoming-note {
-    margin-top: 32px;
-}
+ h1,h2,h3,h4,h5,h6 {
+     font-family: 'Poiret One', cursive;
+ }
 
-li.event {
-    margin: 32px 4px;
-    padding-left: 12px;
-    border-left: 2px solid #333;
-    list-style: none;
-    .date {
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-    .event-name {
-        text-transform: uppercase;
-        font-size: 14pt;
-    }
-    .event-location {
-        font-style: italic;
-        font-size: 10pt;
-    }
-}
+ #no-upcoming-note {
+     margin-top: 32px;
+ }
+
+ li.event {
+     margin: 32px 4px;
+     padding-left: 12px;
+     border-left: 2px solid #333;
+     list-style: none;
+     .date {
+         font-weight: bold;
+         margin-bottom: 8px;
+     }
+     .event-name {
+         text-transform: uppercase;
+         font-size: 14pt;
+     }
+     .event-location {
+         font-style: italic;
+         font-size: 10pt;
+     }
+ }
