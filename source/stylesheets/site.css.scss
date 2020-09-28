@@ -26,6 +26,11 @@ nav li:hover, footer li:hover, .active {
     padding: 1px 5px;
 }
 
+.emphasised {
+    font-weight: bold;
+    font-style: oblique;
+}
+
 header {
     margin: 72px auto 52px;
     text-transform: uppercase;
@@ -98,13 +103,15 @@ main {
 
 .about {
     .text {
-        width: 65%;
+        width: 50%;
         float: left;
         padding-top: 12px;
+        padding-left: 50px;
     }
     .portrait {
         width: 35%;
         float: left;
+        overflow: hidden;
     }
 }
 
@@ -160,5 +167,17 @@ main {
      .event-location {
          font-style: italic;
          font-size: 10pt;
+     }
+ }
+
+ .combos {
+     margin-left: 12px;
+     .title {
+         margin-left: 6px;
+         border-bottom: 2px solid #333;
+     }
+     .desc {
+         text-align: right;
+         margin: 0 0 18px 12px ;
      }
  }
