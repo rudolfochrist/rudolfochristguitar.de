@@ -7,6 +7,8 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title  "Middleman" %></title>
+    <%= stylesheet_link_tag "fontawesome.min" %>
+    <%= stylesheet_link_tag "brands.min" %>
     <%= stylesheet_link_tag "fonts" %>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
@@ -24,14 +26,14 @@
             <li class="<%= active_nav '/agenda' %>"><%= link_to t(:agenda), "/agenda.html" %></li>
         <li><%= mail_to 'me@rudolfochristguitar.de', t(:contact) %></li>
         <li>
-          <% link_to 'https://www.instagram.com/rudolfo.christ/' do %>
-          <%= image_tag 'insta-logo.png', width: '29px', height: '29px' %>
-          <% end %>
+            <% link_to 'https://www.instagram.com/rudolfo.christ/' do %>
+                <span class="fab fa-instagram"></span>
+            <% end %>
         </li>
         <li>
-          <% link_to 'https://youtube.com/channel/UCJ2B6SILfh03Iz1PbYaXvTg' do %>
-          <%= image_tag 'yt-logo.png', height: '29dp' %>
-          <% end %>
+            <% link_to 'https://youtube.com/channel/UCJ2B6SILfh03Iz1PbYaXvTg' do %>
+                <span class="fab fa-youtube"></span>
+            <% end %>
       </ul>
     </nav>
     <main>
