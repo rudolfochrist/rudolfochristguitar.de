@@ -1,50 +1,50 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title  "Middleman" %></title>
-    <%= stylesheet_link_tag "fontawesome.min" %>
-    <%= stylesheet_link_tag "brands.min" %>
-    <%= stylesheet_link_tag "fonts" %>
-    <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
-  </head>
-  <body>
-    <header>
-      <% link_to 'index.html' do%>
-      <h1>Sebastian <span class="boxed">Rudolfo</span> Christ</h1>
-      <p>Traditional <span class="boxed">Acoustic Jazz</span> Guitarist</p>
-      <% end %>
-    </header>
-    <nav>
-      <ul>
-        <li class="<%= active_nav '/about' %>"><%= link_to t(:about), "/about.html" %></li>
-            <li class="<%= active_nav '/agenda' %>"><%= link_to t(:agenda), "/agenda.html" %></li>
-        <li><%= mail_to 'me@rudolfochristguitar.de', t(:contact) %></li>
-        <li>
-            <% link_to 'https://www.instagram.com/rudolfo.christ/' do %>
-                <span class="fab fa-instagram"></span>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Use the title from a page's frontmatter if it has one -->
+        <title><%= current_page.data.title  "Middleman" %></title>
+        <%= stylesheet_link_tag "fontawesome.min" %>
+        <%= stylesheet_link_tag "brands.min" %>
+        <%= stylesheet_link_tag "fonts" %>
+        <%= stylesheet_link_tag "site" %>
+        <%= javascript_include_tag "site" %>
+    </head>
+    <body>
+        <header>
+            <% link_to 'index.html' do%>
+                <h1>Sebastian <span class="boxed">Rudolfo</span> Christ</h1>
+                <p>Traditional <span class="boxed">Acoustic Jazz</span> Guitarist</p>
             <% end %>
-        </li>
-        <li>
-            <% link_to 'https://youtube.com/channel/UCJ2B6SILfh03Iz1PbYaXvTg' do %>
-                <span class="fab fa-youtube"></span>
-            <% end %>
-      </ul>
-    </nav>
-    <main>
-      <%= yield %>
-    </main>
-    <footer>
-      <ul>
-        <div>Copyright &#169; <%= year_range %> Sebastian Christ</div>
-        <li><%= link_to t(:imprint), "imprint.html" %></li>
-        <li><%= link_to t(:privacy_policy), "privacy-policy.html" %></li>
-      </ul>
-    </footer>
-  </body>
+        </header>
+        <nav>
+            <ul>
+                <li class="<%= active_nav '/about' %>"><%= link_to t(:about), "/about.html" %></li>
+                <li class="<%= active_nav '/agenda' %>"><%= link_to t(:agenda), "/agenda.html" %></li>
+                <li><%= mail_to 'me@rudolfochristguitar.de', t(:contact) %></li>
+                <li>
+                    <% link_to 'https://www.instagram.com/rudolfo.christ/' do %>
+                        <span class="fab fa-instagram"></span>
+                    <% end %>
+                </li>
+                <li>
+                    <% link_to 'https://youtube.com/channel/UCJ2B6SILfh03Iz1PbYaXvTg' do %>
+                        <span class="fab fa-youtube"></span>
+                    <% end %>
+            </ul>
+        </nav>
+        <main>
+            <%= yield %>
+        </main>
+        <footer>
+            <div>Copyright &#169; <%= year_range %> Sebastian Christ</div>
+            <ul>
+                <li><%= link_to t(:imprint), "imprint.html" %></li>
+                <li><%= link_to t(:privacy_policy), "privacy-policy.html" %></li>
+            </ul>
+        </footer>
+    </body>
 </html>
