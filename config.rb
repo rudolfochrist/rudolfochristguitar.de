@@ -1,9 +1,7 @@
+require 'date'
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
 
 activate :directory_indexes
 activate :i18n, mount_at_root: false
@@ -47,6 +45,16 @@ helpers do
       return "active"
     end
     return "active" if current_page.url.include? path
+  end
+
+  def date_string(date)
+    d = DateTime.parse date
+    I18n.l d.to_date, format: :long
+  end
+
+  def time_string(date)
+    d = DateTime.parse date
+    d.strftime "%H:%M Uhr"
   end
 end
 

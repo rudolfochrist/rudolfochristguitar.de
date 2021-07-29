@@ -5,29 +5,27 @@ title: Agenda
 <section>
   <h2>Upcoming</h2>
   <p id="no-upcoming-note" class="hidden">Derzeit gibt es keine anstehenden Veranstaltungen.</p>
-  <ul id="upcoming-events"></ul>
+  <ul id="upcoming"></ul>
 </section>
 
 <section>
   <h2>Events</h2>
   <ul id="events">
-    <% data.agenda.sort {|a,b| b.date <=> a.date}.each do |item| %>
-    <li class="event" data-date="<%= item.date.iso8601 %>">
-      <div class="date">
-        <%= item.date.strftime("%d") %>
-        <%= t(item.date.strftime("%b").to_sym)%>
-        <%= item.date.strftime("%Y") %>
-        &mdash;
-        <%= item.date.strftime("%H:%M") %>
-      </div>
-      <div class="event-name">
-        <%= item.title %>
-      </div>
-      <div class="event-location">
-        <%= item.location %>
-      </div>
-      <%= link_to "Link", item.link  %>
-    </li>
+    <% data.agenda.each do |item| %>
+        <li class="event" data-date="<%= item.date %>">
+            <div class="date">
+                <%= date_string item.date %>
+                &mdash;
+                <%= time_string item.date %>
+            </div>
+            <div class="event-name">
+                <%= item.title %>
+            </div>
+            <div class="event-location">
+                <%= item.location %>
+            </div>
+            <%= link_to "Link", item.link  %>
+        </li>
     <% end %>
   </ul>
 </section>
