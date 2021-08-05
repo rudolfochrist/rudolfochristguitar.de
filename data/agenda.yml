@@ -2,11 +2,18 @@
   date: "2020-06-27T13:00:00"
   location: Online-Streaming
   link: https://karantena.tv/
-- title: "Hot Club Worms: Jazz-Frühschoppen"
+- title: "Jazz-Frühschoppen"
+  ensemble: Hot Club Worms
   date: "2021-08-22T11:30:00"
   location: Hochstädter Haus, Bensheim
   link: https://hochstädter-haus.de/
-- title: "Hot Club Worms: Theater Mobile Sommerfest"
+- title: Theater Mobile Sommerfest
+  ensemble: Hot Club Worms
   date: "2021-08-28T18:00:00"
   location: Zwingenberg/Bergstr
+  note: >-
+    Um Anmeldung wird gebeten.
   link: https://mobile-zwingenberg.de/
+- title: Private Veranstaltung
+  date: "2021-10-02T12:00:00"
+  location: Mannheim

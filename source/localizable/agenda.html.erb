@@ -19,12 +19,22 @@ title: Agenda
                 <%= time_string item.date %>
             </div>
             <div class="event-name">
+                <% if item.ensemble %>
+                    <strong><%= item.ensemble %>:</strong>
+                <% end %>
                 <%= item.title %>
             </div>
             <div class="event-location">
                 <%= item.location %>
             </div>
-            <%= link_to "Link", item.link  %>
+            <% if item.note %>
+                <p>
+                    <%= item.note %>
+                </p>
+            <% end %>
+            <% if item.link %>
+                <%= link_to "Link", item.link  %>
+            <% end %>
         </li>
     <% end %>
   </ul>
