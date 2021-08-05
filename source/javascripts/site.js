@@ -10,23 +10,34 @@ function docReady(fn) {
 }
 
 function sortEvents() {
-  const $events = document.getElementById("events").children;
-  const $upcomingContainer = document.getElementById("upcoming-events");
+  const $events = document.querySelector("#events");
+  const $upcomingContainer = document.querySelector("#upcoming");
   const today = new Date();
 
-  for (const $event of $events) {
-    const eventDate = new Date($event.dataset['date']);
-    if (eventDate >= today) {
-      $upcomingContainer.append($event);
-    }
-  }
+  // sort them in reverse
+  [...$events.children]
+    .sort((a, b) => new Date(a.dataset.date) < new Date(b.dataset.date) ? 1 : -1)
+    .forEach(node => $events.appendChild(node));
 
-  const $noUpcomingNote = document.getElementById("no-upcoming-note");
+  // move to upcoming
+  [...$events.children].forEach((event) => {
+    const eventDate = new Date(event.dataset.date);
+    if (eventDate >= today) $upcomingContainer.appendChild(event);
+  });
+
+  const $noUpcomingNote = document.querySelector("#no-upcoming-note");
   if ($upcomingContainer.children.length === 0) {
     $noUpcomingNote.classList.remove("hidden");
+  } else {
+    [...$upcomingContainer.children]
+      .sort((a, b) => new Date(a.dataset.date) > new Date(b.dataset.date) ? 1 : -1)
+      .forEach(node => $upcomingContainer.appendChild(node));
   }
 }
 
 docReady(() => {
-  sortEvents();
+  const events = document.querySelector("#events");
+  if (events != null) {
+    sortEvents();
+  }
 });
