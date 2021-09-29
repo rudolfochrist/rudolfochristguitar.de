@@ -4,7 +4,7 @@ require 'date'
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 activate :directory_indexes
-activate :i18n, mount_at_root: false
+activate :i18n, mount_at_root: :false
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
@@ -49,12 +49,7 @@ helpers do
 
   def date_string(date)
     d = DateTime.parse date
-    I18n.l d.to_date, format: :long
-  end
-
-  def time_string(date)
-    d = DateTime.parse date
-    d.strftime "%H:%M Uhr"
+    I18n.l d, format: :long
   end
 end
 
