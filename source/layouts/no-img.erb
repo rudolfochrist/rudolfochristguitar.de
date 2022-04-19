@@ -35,14 +35,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-6">
-                    <img class="rounded-corners <%= current_page.data.img_class %>" src="/images/me.jpg"/>
-                </div>
-                <div class="col-6">
-                    <%= yield %>
-                </div>
-            </div>
+            <%= yield %>
             <footer>
                 <div>Copyright &#169; <%= year_range %> Sebastian Christ</div>
                 <%= link_to t(:imprint), "imprint.html" %>

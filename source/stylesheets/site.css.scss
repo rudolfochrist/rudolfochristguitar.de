@@ -1,269 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
-    color: #333;
+@import "_include-media";
+
+$breakpoints: (phone: 380px, tablet: 768px, desktop: 1024px);
+
+:root {
+    --bg-color: #07005C;
+    --font-color: #D2B896;
+    --color-primary: #D2B896;
+    --font-family-sans: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif;
 }
 
 body {
-    max-width: 978px;
-    margin: 0 auto;
-    background-color: #f4f4f4;
-    font-family: 'Open Sans', sans-serif;
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav li:hover, footer li:hover, .active {
-    text-decoration: none;
-    border-bottom: 2px solid #333;
-}
-
-.boxed {
-    border: 2px solid #333;
-    padding: 1px 5px;
-}
-
-.emphasised {
-    font-weight: bold;
-    font-style: oblique;
-}
-
-.caption {
-    font-size: 8pt;
-    font-style: oblique;
-}
-
-header {
-    margin: 72px auto 52px;
-    text-transform: uppercase;
-    a:hover {
-        text-decoration: none;
-    }
-    a {
-        font-family: 'Poiret One', cursive;
-        h1 {
-            font-size: 40pt;
-        }
-        p {
-            margin-top: 10px;
-        }
-    }
-}
-
-nav, footer, #lang-select {
-    height: 36px;
-    li {
-        display: inline-block;
-        height: 36px;
-        a {
-            display: inline-block;
-            height: 29px;
-        }
-    }
-}
-
-#lang-select {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-}
-
-nav {
-    font-size: 17pt;
-    margin: 30px auto;
-    text-transform: uppercase;
-    ul {
-        display: flex;
-        justify-content: space-between;
-        li {
-            font-family: 'Poiret One', cursive;
-        }
-    }
-}
-
-footer {
-    font-size: 10pt;
-    margin-bottom: 18px;
-    ul,  div {
-        display: flex;
-        justify-content: flex-end;
-        li {
-            margin-left: 12px;
-        }
-    }
+    margin-top: 24px;
 }
 
 main {
-    overflow: hidden;
-    width: 100%;
-    min-height: 350px;
-    p {
-        margin-bottom: 18px;
-        text-align: justify;
+    padding: 2% 8%;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    @include media(">phone", "<desktop") {
+        column-gap: 30%;
     }
 }
 
-.about {
-    .text {
-        width: 50%;
-        float: left;
-        padding-top: 12px;
-        padding-left: 50px;
-    }
-    .portrait {
-        width: 35%;
-        float: left;
-        overflow: hidden;
+p, p a {
+    color: #E5DBCB;
+}
+
+a {
+    text-decoration: underline;
+    &:hover {
+        text-decoration: unset;
+        color: #FA1A8E;
     }
 }
 
- //https://medium.com/@kimcodeashian/simple-css-solutions-how-to-resize-images-with-different-dimensions-without-cropping-eb744e93246d
- .fullsize-image {
-     position: relative;
-     width: 978px;
-     height: 350px;
-     overflow: hidden;
-     img {
-         position: absolute;
-         max-width: 100%;
-         width: 100%;
-         top: 65%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-     }
- }
+@mixin rounded-corners {
+    border-radius: 15px;
+    border: 2px solid var(--color-primary);
+}
 
- section {
-     min-height: 106px;
-     margin-top: 32px;
-     a:hover {
-         text-decoration: underline;
-     }
- }
+.rounded-corners {
+    @include rounded-corners;
+}
 
- .hidden {
-     display: none;
- }
+footer {
+    border-top: solid 1px var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
 
- h1,h2,h3,h4,h5,h6 {
-     font-family: 'Poiret One', cursive;
- }
+#events, #upcoming {
+    list-style: square;
+    li + li {
+        margin-top: 12px;
+    }
+    li p {
+        margin: 12px 0 0 0;
+    }
+}
 
- #no-upcoming-note {
-     margin-top: 32px;
- }
+.gallery {
+    display: flex;
+    flex-direction: column;
+    row-gap: 23px;
+}
 
- li.event {
-     margin: 32px 4px;
-     padding-left: 12px;
-     border-left: 2px solid #333;
-     list-style: none;
-     .date {
-         font-weight: bold;
-         margin-bottom: 8px;
-     }
-     .event-name {
-         text-transform: uppercase;
-         font-size: 14pt;
-     }
-     .event-location {
-         font-style: italic;
-         font-size: 10pt;
-     }
-     p {
-         margin-top: 16pt;
-     }
- }
+#yt-cookie-notice p {
+    padding: 0 7%;
+    margin: 4px auto;
+}
 
- .combos {
-     margin-left: 12px;
-     .title {
-         margin-left: 6px;
-         border-bottom: 2px solid #333;
-     }
-     .desc {
-         text-align: right;
-         margin: 0 0 18px 12px ;
-     }
- }
+iframe {
+    @include rounded-corners;
+}
 
- /* MEDIA QUERIES */
-
- @media screen and (max-width: 1020px) {
-     body {
-         padding: 0 4%;
-     }
-
-     main {
-         min-height: 0;
-         .fullsize-image {
-             display: none;
-         }
-     }
-
-     nav {
-         height: 100%;
-         ul {
-             display: block;
-             border: 1px solid #333;
-             border-radius: 12px;
-             li {
-                 height: 60px;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 &:not(:last-child) {
-                     border-bottom: 1px solid #333;
-                 }
-                 a {
-                     width: 100%;
-                     height: 100%;
-                     display: flex;
-                     justify-content: center;
-                     align-items: center;
-                 }
-             }
-         }
-     }
-
-     nav li:hover, footer li:hover, .active {
-         background-color: #d7d7d7;
-         border-bottom: none;
-         &:first-child {
-             border-top-left-radius: 12px;
-             border-top-right-radius: 12px;
-         }
-         &:last-child {
-             border-bottom-left-radius: 12px;
-             border-bottom-right-radius: 12px;
-         }
-     }
-
-     .about {
-         .portrait {
-             display: none;
-         }
-         .text {
-             width: 100%;
-             padding: 0;
-         }
-     }
-
-     footer {
-         margin-top: 66px;
-         div {
-             margin-bottom: 26px;
-         }
-         ul {
-             align-items: center;
-             justify-content: center;
-             flex-direction: column;
-             li {
-                 margin: 0;
-             }
-         }
-     }
- }
+h1,h2,h3,h4,h5,h6 {
+    text-transform: uppercase;
+}

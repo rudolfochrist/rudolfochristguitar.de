@@ -1,0 +1,37 @@
+---
+title: Medien
+img_class: hide-xs
+---
+<section class="gallery">
+    <div
+        class="rounded-corners"
+        data-service="youtube"
+        data-id="IzomSV_9WKY"
+        data-autoscale>
+    </div>
+
+    <div
+        class="rounded-corners"
+        data-service="youtube"
+        data-id="vKHyBGPc9-o"
+        data-autoscale>
+    </div>
+
+    <div
+        class="rounded-corners"
+        data-service="youtube"
+        data-id="WE_BMO_4RRo"
+        data-autoscale>
+    </div>
+
+    <div
+        class="rounded-corners"
+        data-service="youtube"
+        data-id="W-TVZgGNcTI"
+        data-autoscale>
+    </div>
+
+    <% [1,2,3].each do |index|  %>
+        <%= image_tag "pics/#{index}.jpg", class: "rounded-corners", alt: "Sebastian Rudolfo Christ" %>
+    <% end %>
+</section>

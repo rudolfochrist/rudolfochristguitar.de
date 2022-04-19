@@ -1,10 +1,13 @@
 ---
 de:
   about: "Bio"
-  agenda: "Agenda"
+  agenda: "Termine"
   contact: "Kontakt"
   imprint: "Impressum"
   privacy_policy: "Datenschutzerklärung"
+  media: "Medien"
+  projects: "Projekte"
+  cookie_settings: "Cookie-Einstellungen"
   activerecord:
     errors:
       messages:
