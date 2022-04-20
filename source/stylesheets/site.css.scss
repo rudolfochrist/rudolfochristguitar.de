@@ -25,7 +25,10 @@ nav {
     height: 100%;
 
     @include media(">phone", "<desktop") {
-        column-gap: 30%;
+        height: 45%;
+        gap: 0 10%;
+        justify-content: flex-start;
+        padding-top: 32px;
     }
 }
 
