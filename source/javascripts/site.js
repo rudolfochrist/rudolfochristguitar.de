@@ -40,4 +40,14 @@ docReady(() => {
   if (events != null) {
     sortEvents();
   }
+
+  const cookieBtn = document.querySelector("#cookie-settings");
+  if (cookieBtn) {
+    cookieBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      console.log('called handler');
+      cc.eraseCookies(['cc_cookie', 'cc_youtube']);
+      window.location.reload();
+    });
+  }
 });

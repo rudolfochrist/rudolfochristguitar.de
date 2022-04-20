@@ -2,11 +2,13 @@
   date: "2020-06-27T13:00:00"
   location: Online-Streaming
   link: https://karantena.tv/
+  
 - title: "Jazz-Frühschoppen"
   ensemble: Hot Club Worms
   date: "2021-08-29T11:00:00"
   location: Hochstädter Haus, Bensheim
   link: https://hochstädter-haus.de/
+  
 - title: Theater Mobile Sommerfest
   ensemble: Hot Club Worms
   date: "2021-08-28T18:00:00"
@@ -14,9 +16,11 @@
   note: >-
     Um Anmeldung wird gebeten.
   link: https://mobile-zwingenberg.de/
+  
 - title: Private Veranstaltung
   date: "2021-10-02T18:30:00"
   location: Mannheim
+  
 - title: Hamburger Tor
   location: Worms
   ensemble: Hot Club Worms Trio
@@ -24,6 +28,7 @@
   note: >-
     Wir spielen als Trio beim "Gabelfrühstück und Blau" im Hamburger Tor in Worms
   link: http://hamburger-tor.de/2021/09/26/gabelfruehstueck-und-blau/
+  
 - title: Jubiläumsbrunch - 100 Jahre Mensa academica
   location: Zeughaus, Heidelberg
   ensemble: Rodolfo & Rudolfo
@@ -31,17 +36,41 @@
   note: >-
     Geige und Gitarren Duo
   link: https://fb.me/e/eAqG24J3h
+  
 - title: Gypsy Swing & Jazz Jam Session 
   location: Kulturbrücken Jungbusch, Mannheim
   date: "2021-11-18T20:00:00"
   link: https://fb.me/e/2B7qG4i1i
+  
 - title: Konzert
   location: Jazzclub Kiste, Stuttgart
   ensemble: Mainouche
   date: "2021-11-20T20:30:00"
   link: https://www.kiste-stuttgart.de/
-- title: Gypsy Swing & Jazz Jam SessionL Opener
+  
+- title: Gypsy Swing & Jazz Jam Session Opener
   location: Kulturbrücken Jungbusch, Mannheim
   ensemble: Hot Club Worms
   date: "2022-02-17T20:00:00"
   link: https://fb.me/e/6CTAO5y6K
+  
+- title: Konzert
+  location: Jazzclub Kiste, Stuttgart
+  ensemble: Mainouche
+  date: "2022-04-01T20:30:00"
+  link: https://fb.me/e/1DZYXUfDU
+  
+- title: Gypsy Swing and Jazz Jam Session
+  location: Kulturbrücken Jungbusch, Mannheim
+  date: "2022-04-21T20:00:00"
+  link: https://fb.me/e/33eyrEL7v
+  note: >-
+    Alle Musiker sind herzlich eingeladen mit Instrument vorbeizukommen!
+    
+- title: Lazy Sunday Afternoon
+  location: Hamburger Tor, Worms
+  ensemble: Hot Club Worms
+  date: "2022-05-01T16:00:00"
+  link: https://www.hamburger-tor.de/2022/04/13/lazy-sunday-afternoon/
+    
+
