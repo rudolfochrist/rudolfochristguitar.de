@@ -1,37 +1,35 @@
 ---
-title: Medien
-img_class: hide-xs
+title: Gallerie
+layout: gallery
 ---
-<section class="gallery">
+<div class="col-6">
     <div
         class="rounded-corners"
         data-service="youtube"
         data-id="IzomSV_9WKY"
         data-autoscale>
     </div>
-
     <div
         class="rounded-corners"
         data-service="youtube"
         data-id="vKHyBGPc9-o"
         data-autoscale>
     </div>
-
+    <%= image_tag "pics/2.jpg", class: "rounded-corners", alt: "Sebastian Rudolfo Christ" %>
+    <%= image_tag "pics/3.jpg", class: "rounded-corners", alt: "Sebastian Rudolfo Christ" %>
+</div>
+<div class="col-6">
     <div
         class="rounded-corners"
         data-service="youtube"
         data-id="WE_BMO_4RRo"
         data-autoscale>
     </div>
-
     <div
         class="rounded-corners"
         data-service="youtube"
         data-id="W-TVZgGNcTI"
         data-autoscale>
     </div>
-
-    <% [1,2,3].each do |index|  %>
-        <%= image_tag "pics/#{index}.jpg", class: "rounded-corners", alt: "Sebastian Rudolfo Christ" %>
-    <% end %>
-</section>
+    <%= image_tag "pics/1.jpg", class: "rounded-corners", alt: "Sebastian Rudolfo Christ" %>
+</div>

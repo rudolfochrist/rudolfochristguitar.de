@@ -20,15 +20,17 @@
         <main>
             <div class="row">
                 <div class="col-6">
-                    <% link_to "index.html" do %>
-                        <%= image_tag "logo.png", alt: "Sebastian Rudolfo Christ Logo" %>
-                    <% end %>
+                    <div id="logo">
+                        <% link_to "index.html" do %>
+                            <%= image_tag "logo.png", alt: "Sebastian Rudolfo Christ Logo" %>
+                            <%= image_tag "logo-pink.png", alt: "Sebastian Rudolfo Christ Logo" %>
+                        <% end %>
+                    </div>
                 </div>
                 <div class="col-6">
                     <nav>
-                        <%= link_to t(:projects), "projects.html" %>
                         <%= link_to t(:agenda), "agenda.html" %>
-                        <%= link_to t(:media), "media.html" %>
+                        <%= link_to t(:gallery), "gallery.html" %>
                         <%= mail_to "me@rudolfochristguitar.de", t(:contact) %>
                         <%= link_to "Instagram", "https://www.instagram.com/rudolfo.christ/" %>
                         <%= link_to "YouTube", "https://www.youtube.com/channel/UCJ2B6SILfh03Iz1PbYaXvTg" %>

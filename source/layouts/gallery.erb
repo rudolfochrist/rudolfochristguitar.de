@@ -20,7 +20,7 @@
         <main>
             <div class="row">
                 <div class="col-6">
-                <div id="logo">
+                    <div id="logo">
                         <% link_to "index.html" do %>
                             <%= image_tag "logo.png", alt: "Sebastian Rudolfo Christ Logo" %>
                             <%= image_tag "logo-pink.png", alt: "Sebastian Rudolfo Christ Logo" %>
@@ -37,7 +37,9 @@
                     </nav>
                 </div>
             </div>
-            <%= yield %>
+            <div class="row gallery">
+                <%= yield %>
+            </div>
             <footer>
                 <div>Copyright &#169; <%= year_range %> Sebastian Christ</div>
                 <%= link_to t(:imprint), "imprint.html" %>

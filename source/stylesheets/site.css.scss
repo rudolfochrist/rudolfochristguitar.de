@@ -7,7 +7,16 @@ $breakpoints: (phone: 380px, tablet: 768px, desktop: 1024px);
     --font-color: #D2B896;
     --color-primary: #D2B896;
     --font-family-sans: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif;
+    --grid-gutter: 4rem;
 }
+
+// resetting
+
+a:hover:not(.button) {
+    opacity: unset;
+}
+
+// styles
 
 body {
     margin-top: 24px;
@@ -29,6 +38,20 @@ nav {
         gap: 0 10%;
         justify-content: flex-start;
         padding-top: 32px;
+    }
+}
+
+#logo {
+    img:last-child {
+        display: none;
+    }
+
+    &:hover img:first-child {
+        display: none;
+    }
+
+    &:hover img:last-child {
+        display: inline-block;
     }
 }
 
@@ -69,12 +92,6 @@ footer {
     }
 }
 
-.gallery {
-    display: flex;
-    flex-direction: column;
-    row-gap: 23px;
-}
-
 #yt-cookie-notice p {
     padding: 0 7%;
     margin: 4px auto;
@@ -86,4 +103,18 @@ iframe {
 
 h1,h2,h3,h4,h5,h6 {
     text-transform: uppercase;
+}
+
+.gallery {
+    flex-flow: column wrap;
+}
+
+@include media(">=tablet") {
+    .gallery {
+        flex-flow: row wrap;
+    }
+}
+
+.gallery > div > *:not(:first-child) {
+    margin-top: 2rem;
 }
