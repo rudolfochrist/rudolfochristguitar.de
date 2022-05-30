@@ -79,6 +79,11 @@
   date: "2022-05-15T11:00:00"
   link: https://www.hamburger-tor.de/event/luther-kraeuterbutter/
 
+- title: Jam Session Opener
+  location: Café Leitstelle, Heidelberg
+  ensemble: Miro Trio
+  date: "2022-06-02T20:30:00"
+
 - title: Weinfest Zwingenberg
   ensemble: Hot Club Worms
   location: Zwingenberg
@@ -88,6 +93,16 @@
   ensemble: Hot Club Worms
   location: Elefantenhöfe, Worms
   date: "2022-06-11T14:00:00"
+
+- title: Abendunterhaltung
+  location: Café Mühle, Neckargemünd
+  ensemble: Miro Trio
+  date: "2022-06-17T20:00:00"
+
+- title: Konzert
+  location: Pillhuhn, Darmstadt
+  ensemble: Mainouche
+  date: "2022-06-18T20:00:00"
 
 - title: Wormser Kulturnacht
   ensemble: Hot Club Worms
@@ -101,8 +116,5 @@
   location: Zwingenberg
   date: "2022-09-03T00:00:00"
 
-- title: Private Veranstaltung
-  ensemble: Hot Club Worms
-  location: Hirschberg
-  date: "2022-09-17T00:00:00"
+  
 
