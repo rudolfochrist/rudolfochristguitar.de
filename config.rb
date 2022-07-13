@@ -49,7 +49,7 @@ helpers do
 
   def date_string(date)
     d = DateTime.parse date
-    if d.hour > 0
+    if d.hour.zero?
       d = d.to_date
     end
     I18n.l d, format: :long
