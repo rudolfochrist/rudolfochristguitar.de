@@ -104,6 +104,11 @@
   ensemble: Mainouche
   date: "2022-06-18T20:00:00"
 
+- title: Gypsy Swing and Jazz Jam Session Mannheim
+  location: Kulturbrücken Jungbusch, Mannheim
+  ensemble: Miro Trio
+  date: "2022-07-21T20:00:00"
+
 - title: Wormser Kulturnacht
   ensemble: Hot Club Worms
   location: Hamburger Tor, Worms
@@ -116,5 +121,12 @@
   location: Zwingenberg
   date: "2022-09-03T00:00:00"
 
-  
+- title: Private Veranstaltung
+  location: Bergstrasse
+  ensemble: Hot Club Womrs
+  date: "2022-10-01T00:00:00"
 
+- title: Wohzimmerkonzert
+  location: Dossenheim
+  ensemble: Mainouche
+  date: "2022-11-10T20:00:00"
