@@ -54,6 +54,11 @@ helpers do
     end
     I18n.l d, format: :long
   end
+
+  def upcoming_event?(date)
+    d = DateTime.parse date
+    d < DateTime.now
+  end
 end
 
 # build-specific configuration

@@ -14,31 +14,34 @@ layout: no-img
     <h3>Past Events</h3>
     <ul id="events">
         <% data.agenda.each do |item| %>
-            <li class="event" data-date="<%= item.date %>">
-                <div class="date">
-                    <%= date_string item.date %>
-                </div>
-                <div class="event-location">
-                    <%= item.location %>
-                </div>
-                <div class="event-name">
-                    <% if item.ensemble %>
-                        <strong class="text-uppercase"><%= item.ensemble %></strong>
-                        <br/>
-                        &raquo; <%= item.title %> &laquo;
-                    <% else %>
-                        <strong class="text-uppercase"><%= item.title %></strong>
+            <% if item.canceled? and upcoming_event?(item.date) %>
+            <% else %>
+                <li class="event <%= "canceled" if item.canceled? %>" data-date="<%= item.date %>">
+                    <div class="date">
+                        <%= date_string item.date %>
+                    </div>
+                    <div class="event-location">
+                        <%= item.location %>
+                    </div>
+                    <div class="event-name">
+                        <% if item.ensemble %>
+                            <strong class="text-uppercase"><%= item.ensemble %></strong>
+                            <br/>
+                            &raquo; <%= item.title %> &laquo;
+                        <% else %>
+                            <strong class="text-uppercase"><%= item.title %></strong>
+                        <% end %>
+                    </div>
+                    <% if item.note %>
+                        <p>
+                            <%= item.note %>
+                        </p>
                     <% end %>
-                </div>
-                <% if item.note %>
-                    <p>
-                        <%= item.note %>
-                    </p>
-                <% end %>
-                <% if item.link %>
-                    <%= link_to "Link", item.link  %>
-                <% end %>
-            </li>
+                    <% if item.link %>
+                        <%= link_to "Link", item.link  %>
+                    <% end %>
+                </li>
+            <% end %>
         <% end %>
     </ul>
 </section>

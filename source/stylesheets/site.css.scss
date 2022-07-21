@@ -106,6 +106,12 @@ footer {
             padding-left: 2%;
         }
     }
+    .canceled {
+        text-decoration: line-through;
+        &, p, a {
+            color: lightslategray;
+        }
+    }
 }
 
 #yt-cookie-notice p {
