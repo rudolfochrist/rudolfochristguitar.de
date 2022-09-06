@@ -124,7 +124,13 @@
   location: Zwingenberg
   date: "2022-09-03T00:00:00"
 
-- title: Private Veranstaltung
+- title: Konzert
+  location: Flatsebatser, Neckargemünd
+  ensemble: Les valseuses
+  date: "2022-09-16T19:30:00"
+
+- canceled: true
+  title: Private Veranstaltung
   location: Bergstrasse
   ensemble: Hot Club Womrs
   date: "2022-10-01T00:00:00"
