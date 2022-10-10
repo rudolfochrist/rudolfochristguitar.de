@@ -159,7 +159,19 @@
   date: "2022-10-09T16:00:00"
   link: https://www.hamburger-tor.de/event/lazy-sunday-afternoon-2/
 
+- title: Konzert
+  location: Neckargemünd
+  ensemble: Miro Trio
+  date: "2022-10-21T19:00:00"
+
 - title: Wohzimmerkonzert
   location: Dossenheim
   ensemble: Mainouche
   date: "2022-11-10T20:00:00"
+
+- title: Jam Session Opener
+  location: Café Leitstelle, Heidelberg
+  ensemble: Mainouche
+  date: "2022-12-01T20:30:00"
+  note: >-
+    Wir eröffnen die Gypsy Swing Jam Session Rhein-Neckar. 
