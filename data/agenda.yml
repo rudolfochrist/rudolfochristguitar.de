@@ -169,7 +169,19 @@
   ensemble: Mainouche
   date: "2022-11-10T20:00:00"
 
+- title: Konzert
+  location: Mosaik Jazz Bar, Frankfurt
+  ensemble: Mainouche
+  date: "2022-11-17T20:00:00"
+  link: https://www.mosaik-jazzbar.de/programm.php?pratyp=
+
 - title: Jam Session Opener
+  location: Café Leitstelle, Heidelberg
+  ensemble: Miro Trio
+  date: "2022-12-01T20:30:00"
+
+- canceled: true
+  title: Jam Session Opener
   location: Café Leitstelle, Heidelberg
   ensemble: Mainouche
   date: "2022-12-01T20:30:00"
