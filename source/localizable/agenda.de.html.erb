@@ -5,43 +5,16 @@ layout: no-img
 ---
 
 <section>
-    <h3>Upcoming</h3>
+    <h2>Upcoming</h2>
     <p id="no-upcoming-note" class="is-hidden">Derzeit gibt es keine anstehenden Veranstaltungen.</p>
     <ul id="upcoming"></ul>
 </section>
 
 <section>
-    <h3>Past Events</h3>
+    <h2>Past Events</h2>
     <ul id="events">
-        <% data.agenda.each do |item| %>
-            <% if item.canceled? and upcoming_event?(item.date) %>
-            <% else %>
-                <li class="event <%= "canceled" if item.canceled? %>" data-date="<%= item.date %>">
-                    <div class="date">
-                        <%= date_string item.date %>
-                    </div>
-                    <div class="event-location">
-                        <%= item.location %>
-                    </div>
-                    <div class="event-name">
-                        <% if item.ensemble %>
-                            <strong class="text-uppercase"><%= item.ensemble %></strong>
-                            <br/>
-                            &raquo; <%= item.title %> &laquo;
-                        <% else %>
-                            <strong class="text-uppercase"><%= item.title %></strong>
-                        <% end %>
-                    </div>
-                    <% if item.note %>
-                        <p>
-                            <%= item.note %>
-                        </p>
-                    <% end %>
-                    <% if item.link %>
-                        <%= link_to "Link", item.link  %>
-                    <% end %>
-                </li>
-            <% end %>
+        <% events.each do |item| %>
+            <%= partial "event", locals: { event: item } %>
         <% end %>
     </ul>
 </section>

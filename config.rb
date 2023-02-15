@@ -1,4 +1,9 @@
 require 'date'
+require "net/http"
+require "icalendar"
+
+$all_events = []
+
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
@@ -48,16 +53,45 @@ helpers do
   end
 
   def date_string(date)
-    d = DateTime.parse date
-    if d.hour.zero?
-      d = d.to_date
-    end
-    I18n.l d, format: :long
+    I18n.l date, format: :long
   end
 
-  def upcoming_event?(date)
-    d = DateTime.parse date
-    d < DateTime.now
+  def event_description(event)
+    return [] if event.description.nil?
+    c = event.description.force_encoding(Encoding::UTF_8)
+    c.split("---").map(&:chomp)
+  end
+
+  def event_location(event)
+    return "" if event.location.nil?
+    event.location.force_encoding(Encoding::UTF_8)
+  end
+
+  def event_summary(event)
+    return "" if event.summary.nil?
+    event.summary.force_encoding(Encoding::UTF_8)
+  end
+
+  def event_url(event)
+    u = URI(event.url.value_ical)
+    if u.scheme.nil?
+      u = URI.parse("https://#{event.url.value_ical}")
+    end
+    u
+  end
+
+  def events
+    $all_events
+      .sort_by(&:dtstart)
+      .reverse
+  end
+
+  def event_canceled?(event)
+    event_description(event).first == "c"
+  end
+
+  def event_private?(event)
+    event_description(event).first == "p"
   end
 end
 
@@ -68,6 +102,23 @@ end
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+after_configuration do
+
+  def event_description(event)
+    return [] if event.description.nil?
+    c = event.description.force_encoding(Encoding::UTF_8)
+    c.split("---").map(&:chomp)
+  end
+
+  puts "Getting events"
+  ics = Net::HTTP.get(URI(ENV["ICS_URI"]))
+  ical = Icalendar::Calendar.parse(ics).first
+  last_year = Date.today.year - 1
+  next_year = Date.today.year + 1
+  $all_events = ical.events.select {|event|
+    event.dtstart.year >= last_year && event.dtstart.year < next_year && event_description(event).first != "i"
+  }
+end
 
 after_build do
   files_to_cp = ["_redirects"]
@@ -77,3 +128,4 @@ after_build do
     FileUtils.cp_r src, dest
   end
 end
+

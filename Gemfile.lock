@@ -31,6 +31,9 @@ GEM
     hashie (3.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    icalendar (2.8.0)
+      ice_cube (~> 0.16)
+    ice_cube (0.16.4)
     kramdown (2.4.0)
       rexml
     listen (3.8.0)
@@ -105,6 +108,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  icalendar (~> 2.8)
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   tzinfo-data

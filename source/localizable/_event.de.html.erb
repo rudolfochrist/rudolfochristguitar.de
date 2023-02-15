@@ -1,0 +1,25 @@
+<li class="event <%= "canceled" if event_canceled?(event) %>" data-date="<%= event.dtstart.iso8601 %>">
+    <div class="date">
+        <%= date_string event.dtstart %>
+    </div>
+    <% unless event_private?(event) %>
+        <div class="event-location">
+            <%= event_location(event) %>
+        </div>
+    <% end %>
+    <div class="event-name">
+        <% if event_private?(event) %>
+            <h3>Private Veranstaltung</h3>
+        <% else %>
+            <h3><%= event_summary(event) %></h3>
+        <% end %>
+    </div>
+    <% if event_description(event).second %>
+        <p>
+            <%= event_description(event).second %>
+        </p>
+    <% end %>
+    <% if !event.url.to_s.empty? %>
+        <%= link_to "Link", event_url(event) %>
+    <% end %>
+</li>

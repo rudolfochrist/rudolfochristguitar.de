@@ -93,7 +93,7 @@ footer {
         }
     }
     li + li {
-        margin-top: 22px;
+        margin-top: 4rem;
     }
     li p {
         margin: 12px 0 0 0;
@@ -143,4 +143,8 @@ h1,h2,h3,h4,h5,h6 {
 
 dd {
     margin: 0;
+}
+
+section + section {
+    margin-top: 7rem;
 }
