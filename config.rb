@@ -1,6 +1,7 @@
 require 'date'
 require "net/http"
 require "icalendar"
+require 'rrule'
 
 $all_events = []
 
@@ -118,6 +119,15 @@ after_configuration do
   $all_events = ical.events.select {|event|
     event.dtstart.year >= last_year && event.dtstart.year < next_year && event_description(event).first != "i"
   }
+
+  ical.events.select { |event| !event.rrule.empty? }.each do |event|
+    rrule = RRule::Rule.new(event.rrule.first.value_ical)
+    next_date = rrule.all(limit: 1)
+    if !next_date.empty?
+      event.dtstart = next_date.first.change(hour: 20, min: 30)
+      # $all_events << event
+    end
+  end
 end
 
 after_build do
