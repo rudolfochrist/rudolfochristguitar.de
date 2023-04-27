@@ -1,4 +1,4 @@
-<li class="event <%= "canceled" if event_canceled?(event) %>" data-date="<%= event.dtstart.iso8601 %>">
+<li class="event rounded-corners <%= "canceled" if event_canceled?(event) %>" data-date="<%= event.dtstart.iso8601 %>">
     <div class="date">
         <%= date_string event.dtstart %>
     </div>

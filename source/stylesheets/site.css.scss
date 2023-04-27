@@ -86,11 +86,7 @@ footer {
     list-style: none;
     padding: 0;
     li {
-        border-bottom: 1px #D2B896 solid;
-        padding-bottom: 6%;
-        &:last-child {
-            border-bottom: unset;
-        }
+        padding: 6%;
     }
     li + li {
         margin-top: 4rem;
@@ -100,10 +96,8 @@ footer {
     }
     @include media(">phone") {
         li {
-            border-bottom: unset;
-            padding-bottom: unset;
-            border-left: 3px #D2B896 solid;
-            padding-left: 2%;
+            border: 3px #D2B896 solid;
+            padding: 2%;
         }
     }
     .canceled {
