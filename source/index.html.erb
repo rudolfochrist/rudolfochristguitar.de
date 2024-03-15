@@ -2,73 +2,138 @@
 title: Sebastian Rudolfo Christ
 ---
 
-<section>
-    <h1 id="home">Sebastian Rudolfo Christ</h1>
+<section id="home">
+    <%= partial(:nav, locals: { nav_type: "main-nav", hard_links: nil }) %>
+    <h1>Sebastian Rudolfo Christ</h1>
+    <h4>No Games, Just Jazz.</h4>
     <div class="content">
-        <p>Home Content</p>
+        <%= image_tag "me.jpg", width: "512px", alt: "Sebastian Rudolfo Christ spielt Gitarre in einem Café." %>
     </div>
 </section>
 
-<section>
-    <nav>
-        <ul>
-            <li><%= link_to "Home", "#home" %></li>
-            <li><%= link_to "About", "#about" %></li>
-            <li><%= link_to "Shows", "#shows" %></li>
-            <li><%= link_to "Media", "#media" %></li>
-            <li><%= link_to "Teaching", "#teaching" %></li>
-        </ul>
-    </nav>
-    <h1 id="about">Biographie</h1>
+<section id="about">
+    <%= partial(:nav, locals: { nav_type: "main-nav", hard_links: nil }) %>
+    <h1>Biographie</h1>
     <div class="content">
-        <p>About Content</p>
+        <p>
+            Sebastian Rudolfo Christ hat sein musikalisches wirken Django
+            Reinhardt verschieben. Dabei setzt er sich etwas vom
+            vorherrschenden Jazz manouche ab in dem er der alten Sound
+            nach heute bringt und Authentizität vom Schnurrbart bis in die
+            Schuhspitzen mitbringt.
+        </p>
+        <p>
+            Sebastian Rudolfo Christ ist der dritt-jüngste Sproß einer
+            alten Musikerfamilie aus Worms und war somit in einer guten
+            Situation um musikalisch zu Wachsen zu können hineingeboren
+            worden. Jedoch sollte es bis zu seinem fünfzehnten Lebensjahr
+            dauern bis ein Gitarre in die Hand nahm und anfing das
+            Instrument zu erlernen. Familär-bedingt war der Jazz seit
+            kindheitstagen an ein ständiger Begleiter und so dauerte es
+            nicht sehr lange bis Sebastian Rudolfo Christ die Musik von
+            Stéphane Grappelli und Django Reinhard, dem Quintette du Hot
+            Club de France, Bekanntschaft machten. Jedoch wurde kurz
+            darauf sämtliche musikalische Ambitionen durch ein garvierende
+            Verletzung an der Hand je unterbrochen. Die Gitarre verschwand
+            in ihrem Koffer.
+        </p>
+        <p>
+            Ein zwei Informatik-Studiums später fand sich Sebastian
+            Rudolfo Christ Süden Spanies wieder. Getrennt von seiner
+            Familie befand er sich wohl an einen der schönsten Orter der
+            Welt war jedoch im Grunde sehr einsam. In dieser Einsamkeit
+            fand er wieder Freude an der Musik, am Jazz, der Giatrre und
+            natürlich auch an Django Reihardt. Sebastian Rudolfo Christ
+            packte sein Sachen, nahm seine Giatrre und ging zurück nach
+            Deutschland und künpfte an seinem alten Traum an Musik im
+            Stile Django Reinhardts und dem Quitnette du Hot Club de
+            France zu machen.
+        </p>
+        <p>
+            Er nahm Unterricht, besuchte Workshops bei Thomas Haag, Rehan
+            Syed, Gismo Graf, Wawau Adler und auch international bei Samy
+            Dausset und Romain Vuillemin in Paris und innerhalb kürzester
+            Zeit gelang es ihm zu einem der gefragtesten Jazz manouche
+            Gitarristen in seiner Region zu werden. Heute ist Sebastian
+            Rudolf Christ tief in der Szene vernetzt und hatte die Ehre
+            mit großartigen Musiker wie Samy Daussat, Mozes Rosenberg,
+            Samson Schmitt und Dorado Schmitt die Bühne zu teilen.
+        </p>
+        <p>
+            Sebastian Rudolfo Christ ist dabei nicht irgendein Jazz
+            manouche Gitarrist, sonder hat sich wie nur wenige voll und
+            ganz dem alten, ungefilterten und traditionellen Sound Django
+            Reinhardts und dem Swing Jazz der 1930er Jahre
+            verschrieben. Sie mich Ihnen zeigen das alter Swing Jazz, der
+            traditionalle Jazz manouche, die Musik Django Reinhardts und
+            dem Hot Club de France in den letzten 100 Jahre nichts an
+            seiner Lebensfreude, seiner Energie und virtuosen Ausdruck
+            eingebüsst hat. Lassen Sie sich zu einer musikalischen
+            Zeitreise in die 30er und 40er Jahre des zwanzigsten
+            Jahunderts mitnehemen und feiern Sie die goldene Era der Musik
+            mit.
+        </p>
     </div>
 </section>
 
-<section>
-    <nav>
-        <ul>
-            <li><%= link_to "Home", "#home" %></li>
-            <li><%= link_to "About", "#about" %></li>
-            <li><%= link_to "Shows", "#shows" %></li>
-            <li><%= link_to "Media", "#media" %></li>
-            <li><%= link_to "Teaching", "#teaching" %></li>
-        </ul>
-    </nav>
-    <h1 id="shows">Shows</h1>
+<section id="shows">
+    <%= partial(:nav, locals: { nav_type: "main-nav", hard_links: nil }) %>
+    <h1>Shows</h1>
     <div class="content">
         <p>Shows content</p>
     </div>
 </section>
 
-<section>
-    <nav>
-        <ul>
-            <li><%= link_to "Home", "#home" %></li>
-            <li><%= link_to "About", "#about" %></li>
-            <li><%= link_to "Shows", "#shows" %></li>
-            <li><%= link_to "Media", "#media" %></li>
-            <li><%= link_to "Teaching", "#teaching" %></li>
-        </ul>
-    </nav>
-    <h1 id="media">Media</h1>
+<section id="media">
+    <%= partial(:nav, locals: { nav_type: "main-nav", hard_links: nil }) %>
+    <h1>Media</h1>
     <div class="content">
-        <p>Media content</p>
+        <p>Besuchen Sie mich auf YouTube</p>
+        <% link_to "https://www.youtube.com/@rudolfochrist" do %>
+            <button>YouTube</button>
+        <% end %>
+        <p>Besuchen Sie mich auf Instagram</p>
+        <% link_to "https://www.instagram.com/rudolfo.christ/" do %>
+            <button>Instagram</button>
+        <% end %>
     </div>
 </section>
 
-<section>
-    <nav>
-        <ul>
-            <li><%= link_to "Home", "#home" %></li>
-            <li><%= link_to "About", "#about" %></li>
-            <li><%= link_to "Shows", "#shows" %></li>
-            <li><%= link_to "Media", "#media" %></li>
-            <li><%= link_to "Teaching", "#teaching" %></li>
-        </ul>
-    </nav>
-    <h1 id="teaching">Unterricht</h1>
+<section id="teaching">
+    <%= partial(:nav, locals: { nav_type: "main-nav", hard_links: nil }) %>
+    <h1>Unterricht</h1>
     <div class="content">
-        <p>Teaching content</p>
+        <p>
+            Gitarren Einzel- und Gruppenunterricht
+            <ul>
+                <li>Jazz Manouche</li>
+                <li>Swing</li>
+                <li>Traditional Jazz</li>
+            </ul>
+        </p>
+        <p>
+            Der Unterricht vermittelt die folgenden Inhalte
+            <ul>
+                <li>korrekte Picking Technique (rest stoke technique)</li>
+                <li>Rhythmus und Begleitung</li>
+                <li>Akkorde und Chord Voicings</li>
+                <li>Improvisation</li>
+            </ul>
+        </p>
+        <p>
+            Grundkenntnisse an der Gitarre sollten vorhanden sein.
+        </p>
+        <p>
+            Meine didaktische Methode orientiert sich an der Chang/van Hemert-Methode und versucht mit so wenig musiktheoretischen Inhalten und ohne Noten die obigen Themenbereiche zu vermitteln. Das spielerische Ausprobieren und der Fokus auf das sofortige Umsetzen der Lerninhalte sorgt dafür, dass das Erlernte sich tief verwurzelt und gleich dem Erlernen einer Sprache in die Spielweise und den musikalischer Ausdruck einfließt.
+        </p>
+        <p>
+            Unterrichtsort ist Worms oder auf Wunsch an einem anderen Ort im näheren Einzugsgebiet. Unterricht vor Ort im Rhein-Main- oder Rhein-Neckar-Gebiet (Mannheim, Heidelberg, Mainz, etc.) ist ebenfalls gegen eine Anfahrtspauschale möglich.
+        </p>
+        <p>
+            Preis: 35 €/h
+        </p>
+        <p>
+            Bei Interesse kontaktieren Sie mich bitte unter <%= mail_to "me@rudolfochristguitar.de" %>.
+        </p>
     </div>
 </section>

@@ -23,15 +23,6 @@
         <%= javascript_include_tag "application" %>
     </head>
     <body>
-        <nav class="main-nav">
-            <ul>
-                <li><%= link_to "Home", "#home" %></li>
-                <li><%= link_to "About", "#about" %></li>
-                <li><%= link_to "Shows", "#shows" %></li>
-                <li><%= link_to "Media", "#media" %></li>
-                <li><%= link_to "Teaching", "#teaching" %></li>
-            </ul>
-        </nav>
         <main>
             <%= yield %>
         </main>
@@ -46,9 +37,10 @@
                 </ul>
             </nav>
             <div class="content">
-                <ul>
-                    <li><%= link_to "Impressum", "/imprint.html" %></li>
-                    <li><%= link_to "Datenschutzerklärung", "/privacy-policy.html" %></li>
+              <ul>
+                  <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
+                  <li><%= link_to "Impressum", "/imprint.html" %></li>
+                  <li><%= link_to "Datenschutzerklärung", "/privacy-policy.html" %></li>
                 </ul>
             </div>
         </footer>
