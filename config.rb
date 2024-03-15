@@ -5,13 +5,6 @@ require 'rrule'
 
 $all_events = []
 
-
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-activate :directory_indexes
-activate :i18n, mount_at_root: :false
-
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -98,11 +91,6 @@ end
 
 # build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
 after_configuration do
 
   def event_description(event)
@@ -129,13 +117,3 @@ after_configuration do
     end
   end
 end
-
-after_build do
-  files_to_cp = ["_redirects"]
-  files_to_cp.each do |file|
-    src = File.join config[:source], file
-    dest = File.join config[:build_dir], file
-    FileUtils.cp_r src, dest
-  end
-end
-

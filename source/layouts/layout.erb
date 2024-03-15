@@ -7,48 +7,25 @@
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Use the title from a page's frontmatter if it has one -->
         <title><%= current_page.data.title  "Sebastian Rudolfo Christ" %></title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <%= stylesheet_link_tag "cookieconsent" %>
-        <%= stylesheet_link_tag "iframemanager" %>
-        <%= stylesheet_link_tag "chota.min" %>
-        <%= stylesheet_link_tag "site" %>
+        <!-- Favicons etc -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=02">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=02">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=02">
+        <link rel="manifest" href="/site.webmanifest?v=02">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=02" color="#5bbad5">
+        <link rel="shortcut icon" href="/favicon.ico?v=02">
+        <meta name="apple-mobile-web-app-title" content="Sebastian Rudolfo Christ">
+        <meta name="application-name" content="Sebastian Rudolfo Christ">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Styles -->
+        <!-- Scripts -->
+        <%= javascript_include_tag "application" %>
     </head>
-    <body class="is-horizontal-align">
+    <body>
         <main>
-            <div class="row">
-                <div class="col-6">
-                    <div id="logo">
-                        <% link_to "index.html" do %>
-                            <%= image_tag "logo.png", alt: "Sebastian Rudolfo Christ Logo" %>
-                            <%= image_tag "logo-pink.png", alt: "Sebastian Rudolfo Christ Logo" %>
-                        <% end %>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <%= partial "menu" %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <img class="rounded-corners <%= current_page.data.img_class %>" src="/images/me.jpg"/>
-                </div>
-                <div class="col-6">
-                    <%= yield %>
-                </div>
-            </div>
-            <footer>
-                <div>Copyright &#169; <%= year_range %> Sebastian Christ</div>
-                <%= link_to t(:imprint), "imprint.html" %>
-                <%= link_to t(:privacy_policy), "privacy-policy.html" %>
-                <%= link_to t(:cookie_settings), "javascript:;oo", id: "cookie-settings" %>
-            </footer>
+            <%= yield %>
         </main>
-        <%= javascript_include_tag "cookieconsent" %>
-        <%= javascript_include_tag "iframemanager" %>
-        <%= javascript_include_tag "cookieconsent-init" %>
-        <%= javascript_include_tag "site" %>
+        <footer></footer>
     </body>
 </html>
