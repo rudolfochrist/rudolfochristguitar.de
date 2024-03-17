@@ -11,6 +11,21 @@ title: Sebastian Rudolfo Christ
     </div>
 </section>
 
+<% partial :section_footer do %>
+    <h3>Mailing Liste</h3>
+    <ul>
+        <li>Performances</li>
+        <li>Video Lessons</li>
+    </ul>
+    <% link_to "#" do%>
+        <button>Subscribe</button>
+    <% end %>
+    <ul>
+        <li>Konzerte und Jam Sessions</li>
+        <li>Workshops</li>
+    </ul>
+<% end %>
+
 <section id="about">
     <%= partial(:nav, locals: { nav_type: "main-nav", hard_links: nil }) %>
     <h1>Biographie</h1>
