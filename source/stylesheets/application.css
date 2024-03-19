@@ -2,16 +2,15 @@
     /* colors */
     --clr-primary-800: hsl(180 1% 22%);
 
-    --clr-neutral-200: hsl(178 3% 95%);
+    --clr-neutral-200: white;
 
     --clr-accent-200: hsl(181 38% 79%);
     --clr-accent-500: hsl(9 67% 51%);
 
     /* typography */
-    --ff-primary: 'Josefin Sans', sans-serif;
-    --ff-seconday: 'Open Sans', sans-serif;
+    --ff-primary: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
 
-    --ff-body: var(--ff-seconday);
+    --ff-body: var(--ff-primary);
     --ff-heading: var(--ff-primary);
 
     --fw-regular: 500;
@@ -119,4 +118,4 @@ figure {
     }
 }
 
-// styles
+/* general styling */
