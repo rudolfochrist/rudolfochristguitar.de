@@ -5,6 +5,10 @@ require 'rrule'
 
 $all_events = []
 
+# live reload
+activate :livereload
+set :livereload_css_target, 'stylesheets/application.css'
+
 # Localization
 activate :i18n, mount_at_root: false
 
