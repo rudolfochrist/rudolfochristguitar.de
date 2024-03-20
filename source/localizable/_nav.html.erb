@@ -1,11 +1,11 @@
-<nav class="<%= nav_type %>">
-    <ul>
+<nav>
+    <ul class="nav-list">
         <% if hard_links %>
             <li><%= link_to "Home", "/" %></li>
-            <li><%= link_to "About", "/#about" %></li>
-            <li><%= link_to "Shows", "/#shows" %></li>
-            <li><%= link_to "Media", "/#media" %></li>
-            <li><%= link_to "Teaching", "/#teaching" %></li>
+            <li><%= link_to "About", "/", anchor: "about" %></li>
+            <li><%= link_to "Shows", "/", anchor: "shows" %></li>
+            <li><%= link_to "Media", "/", anchor: "media" %></li>
+            <li><%= link_to "Teaching", "/", anchor: "teaching" %></li>
         <% else %>
             <li><%= link_to "Home", "#home" %></li>
             <li><%= link_to "About", "#about" %></li>

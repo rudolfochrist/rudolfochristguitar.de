@@ -20,12 +20,11 @@
         <meta name="theme-color" content="#ffffff">
         <!-- Styles -->
         <%= stylesheet_link_tag "application" %>
-        <!-- Scripts -->
-        <%= javascript_include_tag "application" %>
     </head>
     <body>
+        <h1>WHAT?</h1>
         <header>
-            <%= partial :nav, locals: { hard_links: false } %>
+            <%= partial :nav, locals: { hard_links: true } %>
         </header>
         <main>
             <%= yield %>
@@ -37,7 +36,7 @@
                     <li><%= link_to "Impressum", "imprint.html" %></li>
                     <li><%= link_to "Datenschutzerklärung", "privacy-policy.html" %></li>
                 </ul>
-                <%= partial :nav, locals: { hard_links: false } %>
+                <%= partial :nav, locals: { hard_links: true } %>
             </div>
         </footer>
     </body>
