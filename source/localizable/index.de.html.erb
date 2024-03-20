@@ -3,12 +3,16 @@ title: Sebastian Rudolfo Christ
 ---
 
 <section id="home">
-    <div class="logo">
-        <%= image_tag "src-logo.svg", width: "360px", alt: "Sebastian Rudolfo Christ Logo" %>
-    </div>
-    <h4>No Games, Just Jazz.</h4>
-    <div class="content">
-        <%= image_tag "me.jpg", width: "512px", alt: "Sebastian Rudolfo Christ spielt Gitarre in einem Café." %>
+    <div class="even-columns">
+        <div>
+            <div class="logo">
+                <%= image_tag "src-logo.svg", width: "360px", alt: "Sebastian Rudolfo Christ Logo" %>
+            </div>
+            <h4 class="text-center">No Games, Just Jazz.</h4>
+        </div>
+        <div>
+            <%= image_tag "me.jpg", width: "512px", alt: "Sebastian Rudolfo Christ spielt Gitarre in einem Café." %>
+        </div>
     </div>
 </section>
 
@@ -28,7 +32,7 @@ title: Sebastian Rudolfo Christ
 <% end %>
 
 <section id="about">
-    <h1>Biographie</h1>
+    <h1 class="primary-heading">Biographie</h1>
     <div class="content">
         <p>
             Sebastian Rudolfo Christ hat sein musikalisches wirken Django
@@ -94,7 +98,7 @@ title: Sebastian Rudolfo Christ
 <%= partial :section_footer %>
 
 <section id="shows">
-    <h1>Shows</h1>
+    <h1 class="primary-heading">Shows</h1>
     <div class="content">
         <p>Shows content</p>
     </div>
@@ -103,7 +107,7 @@ title: Sebastian Rudolfo Christ
 <%= partial :section_footer %>
 
 <section id="media">
-    <h1>Media</h1>
+    <h1 class="primary-heading">Media</h1>
     <div class="content">
         <p>Besuchen Sie mich auf YouTube</p>
         <% link_to "https://www.youtube.com/@rudolfochrist" do %>
@@ -119,7 +123,7 @@ title: Sebastian Rudolfo Christ
 <%= partial :section_footer %>
 
 <section id="teaching">
-    <h1>Unterricht</h1>
+    <h1 class="primary-heading">Unterricht</h1>
     <div class="content">
         <p>
             Gitarren Einzel- und Gruppenunterricht

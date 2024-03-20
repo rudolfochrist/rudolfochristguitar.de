@@ -24,21 +24,23 @@
         <%= javascript_include_tag "application" %>
     </head>
     <body>
-        <header>
-            <%= partial :nav, locals: { hard_links: false } %>
-        </header>
-        <main>
-            <%= yield %>
-        </main>
-        <footer>
-            <div class="content">
-                <ul>
-                    <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
-                    <li><%= link_to "Impressum", "imprint.html" %></li>
-                    <li><%= link_to "Datenschutzerklärung", "privacy-policy.html" %></li>
-                </ul>
+        <div class="container">
+            <header>
                 <%= partial :nav, locals: { hard_links: false } %>
-            </div>
-        </footer>
+            </header>
+            <main>
+                <%= yield %>
+            </main>
+            <footer>
+                <div class="content">
+                    <ul>
+                        <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
+                        <li><%= link_to "Impressum", "imprint.html" %></li>
+                        <li><%= link_to "Datenschutzerklärung", "privacy-policy.html" %></li>
+                    </ul>
+                    <%= partial :nav, locals: { hard_links: false } %>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
