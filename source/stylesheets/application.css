@@ -28,7 +28,7 @@
     --fs-body: var(--fs-400);
     --fs-nav: var(--fs-400);
     --fs-button: var(--fs-500);
-    --fs-primary-heading: var(--fs-600);
+    --fs-primary-heading: var(--fs-400);
     --fs-secondary-heading: var(--fs-400);
 
     /* sizes */
@@ -44,8 +44,8 @@
 
 @media (min-width: 50em) {
     :root {
-        --fs-primary-heading: var(--fs-800);
-        --fs-secondary-heading: var(--fs-600);
+        --fs-primary-heading: var(--fs-600);
+        --fs-secondary-heading: var(--fs-500);
     }
 }
 
@@ -131,28 +131,30 @@ h1,h2,h3,h4,h5,h6 {
     font-family: var(--ff-heading);
 }
 
+section {
+    padding-block: var(--size-900);
+    border-bottom: 0.01rem solid var(--clr-primary-800);
+}
+
 .primary-heading {
     font-size: var(--fs-primary-heading);
-    margin-bottom: 14px;
+    text-transform: uppercase;
+    margin-top: var(--size-200);
+    margin-bottom: var(--size-400);
+    font-size: var(--fs-600);
+}
+
+}
+
     text-transform: uppercase;
 }
 
-.secondary-heading {
-    font-size: var(--fs-secondary-heading);
-    margin-bottom: 14px;
-    text-transform: uppercase;
-}
-
-.section-footer {
-    background-color: var(--clr-accent-200);
-    min-height: 6px;
-    margin: 12px auto;
 }
 
 /* utility */
 
 .container {
-    --max-width: 960px;
+    --max-width: 79ch;
     --padding: 1rem;
 
     width: min(var(--max-width), 100% - var(--padding) * 2);
@@ -161,8 +163,9 @@ h1,h2,h3,h4,h5,h6 {
 
 .even-columns {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     justify-items: center;
+    align-items: center;
 }
 
 @media(min-width: 50em) {
@@ -172,6 +175,14 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.grid-flow-row {
+    grid-auto-flow: row;
+}
+
 .text-center {
     text-align: center;
+}
+
+.padding-block {
+    padding-block: var(--size-400);
 }
