@@ -9,7 +9,7 @@
     --clr-accent-500: hsl(158deg 55% 62%);
 
     /* typography */
-    --ff-primary: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
+    --ff-primary: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 
     --ff-body: var(--ff-primary);
     --ff-heading: var(--ff-primary);
