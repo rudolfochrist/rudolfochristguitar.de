@@ -5,6 +5,7 @@
     --clr-neutral-200: white;
 
     --clr-accent-200: hsl(156deg 85% 89%);
+    --clr-accent-300: hsl(156deg 85% 69%);
     --clr-accent-500: hsl(158deg 55% 62%);
 
     /* typography */
@@ -12,6 +13,7 @@
 
     --ff-body: var(--ff-primary);
     --ff-heading: var(--ff-primary);
+    --ff-button: var(--ff-heading);
 
     --fw-regular: 500;
     --fw-semi-bold: 600;
@@ -144,11 +146,42 @@ section {
     font-size: var(--fs-600);
 }
 
+
+@media(min-width: 50em) {
+    .mailing-list-details {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        list-style: none;
+    }
+
+    .mailing-list-details li {
+        flex: auto;
+    }
 }
 
+.button {
+    background-color: var(--clr-accent-500);
+    color: var(--clr-neutral-200);
+
+    padding: 1rem 2rem;
+
+    border: 0;
+    border-radius: 0.25rem ;
+
+    font-family: var(--ff-button);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
     text-transform: uppercase;
+
+    cursor: pointer;
+    text-decoration: none;
 }
 
+.button:hover {
+    background-color: var(--clr-accent-300);
 }
 
 /* utility */
