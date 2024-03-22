@@ -147,6 +147,14 @@ section {
     margin-bottom: var(--size-400);
 }
 
+.secondary-heading {
+    font-size: var(--fs-secondary-heading);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    margin-top: var(--size-200);
+    margin-bottom: var(--size-400);
+}
+
 
 @media(min-width: 50em) {
     .mailing-list-details {
@@ -183,6 +191,11 @@ section {
 
 .button:hover {
     background-color: var(--clr-accent-300);
+}
+
+ul[role=topics],
+ol[role=topics]{
+    padding-left: 2rem;
 }
 
 /* utility */

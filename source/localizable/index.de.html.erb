@@ -8,7 +8,7 @@ title: Sebastian Rudolfo Christ
             <div class="logo">
                 <%= image_tag "src-logo.svg", width: "360px", alt: "Sebastian Rudolfo Christ Logo" %>
             </div>
-            <h4 class="text-center">No Games, Just Jazz.</h4>
+            <h2 class="text-center secondary-heading">No Games, Just Jazz.</h2>
         </div>
         <div>
             <%= image_tag "me.jpg", width: "512px", alt: "Sebastian Rudolfo Christ spielt Gitarre in einem Café." %>
@@ -27,7 +27,7 @@ title: Sebastian Rudolfo Christ
             <% end %>
         </div>
         <p>
-            Lass Dich informieren über:
+            Informieren Sie sich über:
         </p>
         <ul class="mailing-list-details">
             <li>Konzerte</li>
@@ -111,72 +111,59 @@ title: Sebastian Rudolfo Christ
     </div>
 </section>
 
-<section id="media">
-    <h1 class="primary-heading">Media</h1>
-    <div class="content">
-        <p>Besuchen Sie mich auf YouTube</p>
-        <% link_to "https://www.youtube.com/@rudolfochrist" do %>
-            <button>YouTube</button>
-        <% end %>
-        <p>Besuchen Sie mich auf Instagram</p>
-        <% link_to "https://www.instagram.com/rudolfo.christ/" do %>
-            <button>Instagram</button>
-        <% end %>
-    </div>
-</section>
-
 <section id="teaching">
     <h1 class="primary-heading">Unterricht</h1>
-    <div class="content">
-        <p>
-            Gitarren Einzel- und Gruppenunterricht
-                <li>Jazz Manouche</li>
-                <li>Swing</li>
-                <li>Traditional Jazz</li>
-            </ul>
-        </p>
-        <p>
-            Der Unterricht vermittelt die folgenden Inhalte
-            <ul role="list">
-                <li>korrekte Picking Technique (rest stoke technique)</li>
-                <li>Rhythmus und Begleitung</li>
-                <li>Akkorde und Chord Voicings</li>
-                <li>Improvisation</li>
-            </ul>
-        </p>
-        <p>
-            Grundkenntnisse an der Gitarre sollten vorhanden sein.
-        </p>
-        <p>
-            Meine didaktische Methode orientiert sich an der Chang/van Hemert-Methode und versucht mit so wenig musiktheoretischen Inhalten und ohne Noten die obigen Themenbereiche zu vermitteln. Das spielerische Ausprobieren und der Fokus auf das sofortige Umsetzen der Lerninhalte sorgt dafür, dass das Erlernte sich tief verwurzelt und gleich dem Erlernen einer Sprache in die Spielweise und den musikalischer Ausdruck einfließt.
-        </p>
-        <p>
-            Unterrichtsort ist Worms oder auf Wunsch an einem anderen Ort im näheren Einzugsgebiet. Unterricht vor Ort im Rhein-Main- oder Rhein-Neckar-Gebiet (Mannheim, Heidelberg, Mainz, etc.) ist ebenfalls gegen eine Anfahrtspauschale möglich.
-        </p>
-        <p>
-            Preis: 35 €/h
-        </p>
-        <p>
-            Bei Interesse kontaktieren Sie mich bitte unter <%= mail_to "me@rudolfochristguitar.de" %>.
-        </p>
-    </div>
+    <p class="padding-block">
+        Gitarren Einzel- und Gruppenunterricht
+        <ul role="topics">
+            <li>Jazz Manouche</li>
+            <li>Swing</li>
+            <li>Traditional Jazz</li>
+        </ul>
+    </p>
+    <p class="padding-block" class="padding-block">
+        Der Unterricht vermittelt die folgenden Inhalte
+        <ul role="topics">
+            <li>korrekte Picking Technique (rest stoke technique)</li>
+            <li>Rhythmus und Begleitung</li>
+            <li>Akkorde und Chord Voicings</li>
+            <li>Improvisation</li>
+        </ul>
+    </p>
+    <p class="padding-block">
+        Grundkenntnisse an der Gitarre sollten vorhanden sein.
+    </p>
+    <p class="padding-block">
+        Meine didaktische Methode orientiert sich an der Chang/van Hemert-Methode und versucht mit so wenig musiktheoretischen Inhalten und ohne Noten die obigen Themenbereiche zu vermitteln. Das spielerische Ausprobieren und der Fokus auf das sofortige Umsetzen der Lerninhalte sorgt dafür, dass das Erlernte sich tief verwurzelt und gleich dem Erlernen einer Sprache in die Spielweise und den musikalischer Ausdruck einfließt.
+    </p>
+    <p class="padding-block">
+        Unterrichtsort ist Worms oder auf Wunsch an einem anderen Ort im näheren Einzugsgebiet. Unterricht vor Ort im Rhein-Main- oder Rhein-Neckar-Gebiet (Mannheim, Heidelberg, Mainz, etc.) ist ebenfalls gegen eine Anfahrtspauschale möglich.
+    </p>
+    <p class="padding-block">
+        Preis: 35 €/h
+    </p>
+    <p class="padding-block">
+        Bei Interesse kontaktieren Sie mich bitte unter <%= mail_to "me@rudolfochristguitar.de" %>.
+    </p>
+
 </section>
 
 <section id="contact">
-    <p>
+    <h1 class="primary-heading">Kontakt</h1>
+    <p class="padding-block">
         Buchungsanfragen gerne per E-Mail an <%= mail_to "me@rudolfochristguitar.de" %>
     </p>
-    <p>
+    <p class="padding-block">
         Ob als Gitarren-Duo, Trio, Quartett bis hin zum Quintett. Ob
         begleitend mit Geige, Klarinette oder Gesang. Egal ob
         Geburtstag, Hochzeitne oder Firmenfeiern biete ich
         musikalische Unterhalten für jeden Anlass.
     </p>
-    <p>Eine Auswahl meiner Projekte:</p>
-    <div class="projects">
+    <p class="padding-block">Eine Auswahl meiner Projekte:</p>
+    <ul role="topics">
         <li>Miro Trio</li>
         <li>Mainouche</li>
         <li>Gare du Jazz</li>
         <li>Hot Club Worms</li>
-    </div>
+    </ul>
 </section>
