@@ -156,14 +156,32 @@ title: Sebastian Rudolfo Christ
     <p class="padding-block">
         Ob als Gitarren-Duo, Trio, Quartett bis hin zum Quintett. Ob
         begleitend mit Geige, Klarinette oder Gesang. Egal ob
-        Geburtstag, Hochzeitne oder Firmenfeiern biete ich
-        musikalische Unterhalten für jeden Anlass.
+        Geburtstag, Hochzeit oder Firmenfeier. Ich biete musikalische
+        Unterhalten für jeden Anlass.
     </p>
     <p class="padding-block">Eine Auswahl meiner Projekte:</p>
-    <ul role="topics">
-        <li>Miro Trio</li>
-        <li>Mainouche</li>
-        <li>Gare du Jazz</li>
-        <li>Hot Club Worms</li>
-    </ul>
+    <div class="even-columns">
+        <div class="project">
+            <%= image_tag "miro-trio.jpg" %>
+            <h5 class="text-center padding-block">Miro Trio</h5>
+        </div>
+        <div class="project">
+            <% link_to "https://www.mainouche.de/" do %>
+                <%= image_tag "mainouche.jpg" %>
+                <h5 class="text-center padding-block">Mainouche</h5>
+            <% end %>
+        </div>
+        <div class="project">
+            <% link_to "https://www.hotclubworms.de/" do %>
+                <%= image_tag "hcw.png" %>
+                <h5 class="text-center padding-block">Hot Club Worms</h5>
+            <% end %>
+        </div>
+        <div class="project">
+            <% link_to "https://www.instagram.com/garedujazz4tet/" do %>
+                <%= image_tag "gdj.jpg" %>
+                <h5 class="text-center padding-block">Gare du Jazz</h5>
+            <% end %>
+        </div>
+    </div>
 </section>

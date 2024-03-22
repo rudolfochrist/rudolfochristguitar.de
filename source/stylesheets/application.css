@@ -198,6 +198,10 @@ ol[role=topics]{
     padding-left: 2rem;
 }
 
+.project img {
+    max-height: 32rem;
+}
+
 /* utility */
 
 .container {
