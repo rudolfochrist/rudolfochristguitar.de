@@ -189,7 +189,8 @@ section {
     text-decoration: none;
 }
 
-.button:hover {
+.button:hover,
+.button:focus-visible {
     background-color: var(--clr-accent-300);
 }
 
@@ -200,6 +201,15 @@ ol[role=topics]{
 
 .project img {
     max-height: 32rem;
+}
+
+a {
+    color: var(--clr-primary-800);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--clr-accent-500);
 }
 
 /* utility */
