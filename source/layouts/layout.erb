@@ -18,15 +18,18 @@
         <meta name="application-name" content="Sebastian Rudolfo Christ">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <!-- Styles -->
         <%= stylesheet_link_tag "application" %>
-        <!-- Scripts -->
-        <%= javascript_include_tag "application" %>
     </head>
     <body>
         <div class="container">
-            <header>
-                <%= partial :nav, locals: { hard_links: false } %>
+            <header class="primary-header">
+                <div class="nav-wrapper">
+                    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                        <%= image_tag "icon-burger.svg", class: "icon icon-burger", "aria-hidden" => true %>
+                        <%= image_tag "icon-close.svg", class: "icon icon-close display-none", "aria-hidden" => true %>
+                    </button>
+                    <%= partial :nav, locals: { hard_links: false } %>
+                </div>
             </header>
             <main>
                 <%= yield %>
@@ -42,5 +45,6 @@
                 </div>
             </footer>
         </div>
+        <%= javascript_include_tag "application" %>
     </body>
 </html>

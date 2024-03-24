@@ -1,5 +1,5 @@
-<nav>
-    <ul class="nav-list">
+<nav class="primary-navigation" id="primary-navigation">
+    <ul aria-label="Primary" class="nav-list" role="list">
         <% if hard_links %>
             <li><%= link_to "Home", "/" %></li>
             <li><%= link_to "About", "/", anchor: "about" %></li>
@@ -7,13 +7,21 @@
             <li><%= link_to "Kontakt", "/", anchor: "contact" %></li>
             <li><%= link_to "Teaching", "/", anchor: "teaching" %></li>
         <% else %>
-            <li><%= link_to "Home", "#top" %></li>
-            <li><%= link_to "About", "#about" %></li>
-            <li><%= link_to "Shows", "#shows" %></li>
-            <li><%= link_to "Kontakt", "#contact" %></li>
-            <li><%= link_to "Teaching", "#teaching" %></li>
+            <li><%= link_to "Home", "#top", class: "anchor-link" %></li>
+            <li><%= link_to "About", "#about", class: "anchor-link" %></li>
+            <li><%= link_to "Shows", "#shows", class: "anchor-link" %></li>
+            <li><%= link_to "Kontakt", "#contact", class: "anchor-link" %></li>
+            <li><%= link_to "Teaching", "#teaching", class: "anchor-link" %></li>
         <% end %>
-        <li><%= link_to "YouTube", "https://www.youtube.com/@rudolfochrist" %></li>
-        <li><%= link_to "Instagram", "https://www.instagram.com/rudolfo.christ/" %></li>
+        <li>
+            <% link_to "https://www.youtube.com/@rudolfochrist" do %>
+                <%= image_tag "youtube.svg", alt: "YouTube", class: "icon social-icon" %>
+            <% end %>
+        </li>
+        <li>
+            <% link_to "https://www.instagram.com/rudolfo.christ/" do %>
+                <%= image_tag "instagram.svg", alt: "Instagram", class: "icon social-icon" %>
+            <% end %>
+        </li>
     </ul>
 </nav>
