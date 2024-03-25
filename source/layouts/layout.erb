@@ -35,14 +35,11 @@
                 <%= yield %>
             </main>
             <footer>
-                <div class="content">
-                    <ul>
-                        <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
-                        <li><%= link_to "Impressum", "imprint.html" %></li>
-                        <li><%= link_to "Datenschutzerklärung", "privacy-policy.html" %></li>
-                    </ul>
-                    <%= partial :nav, locals: { hard_links: false } %>
-                </div>
+                <ul role="list">
+                    <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
+                    <li><%= link_to "Impressum", "imprint.html" %></li>
+                    <li><%= link_to "Datenschutzerklärung", "privacy-policy.html" %></li>
+                </ul>
             </footer>
         </div>
         <%= javascript_include_tag "application" %>

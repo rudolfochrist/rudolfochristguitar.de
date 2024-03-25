@@ -309,6 +309,10 @@ a:focus-visible {
     color: var(--clr-accent-500);
 }
 
+footer {
+    padding-block: var(--size-700);
+}
+
 /* utility */
 
 .container {
