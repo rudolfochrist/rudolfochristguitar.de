@@ -198,7 +198,7 @@ img.icon {
         cursor: pointer;
         background: transparent;
         border: 0;
-        padding: 0.5rem;
+        padding: 1.5rem 2rem;
     }
 }
 
@@ -209,6 +209,7 @@ h1,h2,h3,h4,h5,h6 {
 section {
     padding-block: var(--size-900);
     border-bottom: 0.01rem solid var(--clr-primary-800);
+    scroll-margin-top: 2rem;
 }
 
 .primary-heading {
