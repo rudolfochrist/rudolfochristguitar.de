@@ -2,16 +2,16 @@
     <ul aria-label="Primary" class="nav-list" role="list">
         <% if hard_links %>
             <li><%= link_to "Home", "/" %></li>
-            <li><%= link_to "About", "/", anchor: "about" %></li>
+            <li><%= link_to "Bio", "/", anchor: "about" %></li>
             <li><%= link_to "Shows", "/", anchor: "shows" %></li>
             <li><%= link_to "Kontakt", "/", anchor: "contact" %></li>
-            <li><%= link_to "Teaching", "/", anchor: "teaching" %></li>
+            <li><%= link_to "Unterricht", "/", anchor: "teaching" %></li>
         <% else %>
             <li><%= link_to "Home", "#top", class: "anchor-link" %></li>
-            <li><%= link_to "About", "#about", class: "anchor-link" %></li>
+            <li><%= link_to "Bio", "#about", class: "anchor-link" %></li>
             <li><%= link_to "Shows", "#shows", class: "anchor-link" %></li>
             <li><%= link_to "Kontakt", "#contact", class: "anchor-link" %></li>
-            <li><%= link_to "Teaching", "#teaching", class: "anchor-link" %></li>
+            <li><%= link_to "Unterricht", "#teaching", class: "anchor-link" %></li>
         <% end %>
         <li>
             <% link_to "https://www.youtube.com/@rudolfochrist" do %>
