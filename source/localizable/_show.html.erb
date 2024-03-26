@@ -1,0 +1,18 @@
+<% if event.url.to_s.empty? %>
+    <li class="event">
+        <p><%= date_string(event.dtstart) %></p>
+        <p class="summary"><%= event_summary(event) %></p>
+        <p><%= event_location(event) %></p>
+    </li>
+<% else %>
+    <% link_to event_url(event) do %>
+        <li class="event">
+            <p><%= date_string(event.dtstart) %></p>
+            <p class="summary"><%= event_summary(event) %></p>
+            <p>
+                <%= event_location(event) %>
+                <%= image_tag "link.svg", alt: "Link icon" %>
+            </p>
+        </li>
+    <% end %>
+<% end %>

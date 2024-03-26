@@ -1,0 +1,12 @@
+---
+title: Shows
+layout: hard_links
+----
+
+<section>
+    <ul class="shows" role="list">
+        <% events.each do |event| %>
+            <%= partial :show, locals: { event: event } %>
+        <% end %>
+    </ul>
+</section>

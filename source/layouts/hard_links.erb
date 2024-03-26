@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html id="top" lang="de">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,26 +18,30 @@
         <meta name="application-name" content="Sebastian Rudolfo Christ">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        <!-- Styles -->
         <%= stylesheet_link_tag "application" %>
     </head>
     <body>
-        <h1>WHAT?</h1>
-        <header>
-            <%= partial :nav, locals: { hard_links: true } %>
-        </header>
-        <main>
-            <%= yield %>
-        </main>
-        <footer>
-            <div class="content">
-                <ul>
+        <div class="container">
+            <header class="primary-header">
+                <div class="nav-wrapper">
+                    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                        <%= image_tag "icon-burger.svg", class: "icon icon-burger", "aria-hidden" => true %>
+                        <%= image_tag "icon-close.svg", class: "icon icon-close display-none", "aria-hidden" => true %>
+                    </button>
+                    <%= partial :nav, locals: { hard_links: true } %>
+                </div>
+            </header>
+            <main>
+                <%= yield %>
+            </main>
+            <footer>
+                <ul role="list">
                     <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
                     <li><%= link_to "Impressum", "imprint.html" %></li>
                     <li><%= link_to "Datenschutzerklärung", "privacy-policy.html" %></li>
                 </ul>
-                <%= partial :nav, locals: { hard_links: true } %>
-            </div>
-        </footer>
+            </footer>
+        </div>
+        <%= javascript_include_tag "application" %>
     </body>
 </html>
