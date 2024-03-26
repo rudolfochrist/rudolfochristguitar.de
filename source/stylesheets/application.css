@@ -384,3 +384,7 @@ footer {
 .fw-bold {
     font-weight: var(--fw-bold);
 }
+
+.bordered {
+    border: 0.125rem solid var(--clr-primary-800);
+}
