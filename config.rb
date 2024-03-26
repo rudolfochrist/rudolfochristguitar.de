@@ -46,13 +46,6 @@ helpers do
     return "#{year_started} - #{current_year}"
   end
 
-  def active_nav(path)
-    if path == "/" and current_page.url == "/"
-      return "active"
-    end
-    return "active" if current_page.url.include? path
-  end
-
   def date_string(date)
     I18n.l date, format: :long
   end
@@ -87,6 +80,12 @@ helpers do
       .reverse
   end
 
+  def upcoming_events
+    today = Date.today
+    events = $all_events.select {|event| event.dtstart >= today }
+    events.sort_by(&:dtstart)
+  end
+
   def event_canceled?(event)
     event_description(event).first == "c"
   end
@@ -117,14 +116,5 @@ after_configuration do
     $all_events = ical.events.select {|event|
       event.dtstart.year >= last_year && event.dtstart.year < next_year && event_description(event).first != "i"
     }
-
-    ical.events.select { |event| !event.rrule.empty? }.each do |event|
-      rrule = RRule::Rule.new(event.rrule.first.value_ical)
-      next_date = rrule.all(limit: 1)
-      if !next_date.empty?
-        event.dtstart = next_date.first.change(hour: 20, min: 30)
-        # $all_events << event
-      end
-    end
   end
 end

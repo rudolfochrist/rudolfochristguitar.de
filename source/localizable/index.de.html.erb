@@ -22,7 +22,7 @@ title: Sebastian Rudolfo Christ
             Stets informiert mit dem Newsletter!
         </p>
         <div class="text-center">
-            <% link_to "#" do %>
+            <% link_to "https://seu2.cleverreach.com/f/385207-383586/" do %>
                 <button class="button">Hier abonnieren</button>
             <% end %>
         </div>
@@ -43,14 +43,14 @@ title: Sebastian Rudolfo Christ
 <section id="about">
     <h1 class="primary-heading">Biographie</h1>
     <div class="content">
-        <p class="padding-block">
+        <p class="padding-block-400">
             Sebastian Rudolfo Christ hat sein musikalisches wirken Django
             Reinhardt verschieben. Dabei setzt er sich etwas vom
             vorherrschenden Jazz manouche ab in dem er der alten Sound
             nach heute bringt und Authentizität vom Schnurrbart bis in die
             Schuhspitzen mitbringt.
         </p>
-        <p class="padding-block">
+        <p class="padding-block-400">
             Sebastian Rudolfo Christ ist der dritt-jüngste Sproß einer
             alten Musikerfamilie aus Worms und war somit in einer guten
             Situation um musikalisch zu Wachsen zu können hineingeboren
@@ -65,7 +65,7 @@ title: Sebastian Rudolfo Christ
             Verletzung an der Hand je unterbrochen. Die Gitarre verschwand
             in ihrem Koffer.
         </p>
-        <p class="padding-block">
+        <p class="padding-block-400">
             Ein zwei Informatik-Studiums später fand sich Sebastian
             Rudolfo Christ Süden Spanies wieder. Getrennt von seiner
             Familie befand er sich wohl an einen der schönsten Orter der
@@ -77,7 +77,7 @@ title: Sebastian Rudolfo Christ
             Stile Django Reinhardts und dem Quitnette du Hot Club de
             France zu machen.
         </p>
-        <p class="padding-block">
+        <p class="padding-block-400">
             Er nahm Unterricht, besuchte Workshops bei Thomas Haag, Rehan
             Syed, Gismo Graf, Wawau Adler und auch international bei Samy
             Dausset und Romain Vuillemin in Paris und innerhalb kürzester
@@ -87,7 +87,7 @@ title: Sebastian Rudolfo Christ
             mit großartigen Musiker wie Samy Daussat, Mozes Rosenberg,
             Samson Schmitt und Dorado Schmitt die Bühne zu teilen.
         </p>
-        <p class="padding-block">
+        <p class="padding-block-400">
             Sebastian Rudolfo Christ ist dabei nicht irgendein Jazz
             manouche Gitarrist, sonder hat sich wie nur wenige voll und
             ganz dem alten, ungefilterten und traditionellen Sound Django
@@ -105,45 +105,64 @@ title: Sebastian Rudolfo Christ
 </section>
 
 <section id="shows">
-    <h1 class="primary-heading">Shows</h1>
-    <div class="content">
-        <p>Shows content</p>
-    </div>
+    <h1 class="primary-heading">Upcoming Shows</h1>
+    <ul class="shows" role="list">
+        <% upcoming_events.each do |event| %>
+            <% if event.url.to_s.empty? %>
+                <li class="event">
+                    <p><%= date_string(event.dtstart) %></p>
+                    <p class="summary"><%= event_summary(event) %></p>
+                    <p><%= event_location(event) %></p>
+                </li>
+            <% else %>
+                <% link_to event_url(event) do %>
+                    <li class="event">
+                        <p><%= date_string(event.dtstart) %></p>
+                        <p class="summary"><%= event_summary(event) %></p>
+                        <p>
+                            <%= event_location(event) %>
+                            <%= image_tag "link.svg", alt: "Link icon" %>
+                        </p>
+                    </li>
+                <% end %>
+            <% end %>
+        <% end %>
+    </ul>
 </section>
 
 <section id="contact">
     <h1 class="primary-heading">Kontakt</h1>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Buchungsanfragen gerne per E-Mail an <%= mail_to "me@rudolfochristguitar.de" %>
     </p>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Ob als Gitarren-Duo, Trio, Quartett bis hin zum Quintett. Ob
         begleitend mit Geige, Klarinette oder Gesang. Egal ob
         Geburtstag, Hochzeit oder Firmenfeier. Ich biete musikalische
         Unterhalten für jeden Anlass.
     </p>
-    <p class="padding-block">Eine Auswahl meiner Projekte:</p>
+    <p class="padding-block-400">Eine Auswahl meiner Projekte:</p>
     <div class="even-columns">
         <div class="project">
             <%= image_tag "miro-trio.jpg", alt: "Miro Trio Band Foto" %>
-            <h5 class="text-center padding-block">Miro Trio</h5>
+            <h5 class="text-center padding-block-400">Miro Trio</h5>
         </div>
         <div class="project">
             <% link_to "https://www.mainouche.de/" do %>
                 <%= image_tag "mainouche.jpg", alt: "Mainouche Band Foto" %>
-                <h5 class="text-center padding-block">Mainouche</h5>
+                <h5 class="text-center padding-block-400">Mainouche</h5>
             <% end %>
         </div>
         <div class="project">
             <% link_to "https://www.hotclubworms.de/" do %>
                 <%= image_tag "hcw.png", alt: "Hot Club Worms Logo" %>
-                <h5 class="text-center padding-block">Hot Club Worms</h5>
+                <h5 class="text-center padding-block-400">Hot Club Worms</h5>
             <% end %>
         </div>
         <div class="project">
             <% link_to "https://www.instagram.com/garedujazz4tet/" do %>
                 <%= image_tag "gdj.jpg", alt: "Gare du Jazz Band Foto-Collage" %>
-                <h5 class="text-center padding-block">Gare du Jazz</h5>
+                <h5 class="text-center padding-block-400">Gare du Jazz</h5>
             <% end %>
         </div>
     </div>
@@ -151,7 +170,7 @@ title: Sebastian Rudolfo Christ
 
 <section id="teaching">
     <h1 class="primary-heading">Unterricht</h1>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Gitarren Einzel- und Gruppenunterricht
         <ul role="topics">
             <li>Jazz Manouche</li>
@@ -159,7 +178,7 @@ title: Sebastian Rudolfo Christ
             <li>Traditional Jazz</li>
         </ul>
     </p>
-    <p class="padding-block" class="padding-block">
+    <p class="padding-block-400" class="padding-block-400">
         Der Unterricht vermittelt die folgenden Inhalte
         <ul role="topics">
             <li>korrekte Picking Technique (rest stoke technique)</li>
@@ -168,19 +187,19 @@ title: Sebastian Rudolfo Christ
             <li>Improvisation</li>
         </ul>
     </p>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Grundkenntnisse an der Gitarre sollten vorhanden sein.
     </p>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Meine didaktische Methode orientiert sich an der Chang/van Hemert-Methode und versucht mit so wenig musiktheoretischen Inhalten und ohne Noten die obigen Themenbereiche zu vermitteln. Das spielerische Ausprobieren und der Fokus auf das sofortige Umsetzen der Lerninhalte sorgt dafür, dass das Erlernte sich tief verwurzelt und gleich dem Erlernen einer Sprache in die Spielweise und den musikalischer Ausdruck einfließt.
     </p>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Unterrichtsort ist Worms oder auf Wunsch an einem anderen Ort im näheren Einzugsgebiet. Unterricht vor Ort im Rhein-Main- oder Rhein-Neckar-Gebiet (Mannheim, Heidelberg, Mainz, etc.) ist ebenfalls gegen eine Anfahrtspauschale möglich.
     </p>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Preis: 35 €/h
     </p>
-    <p class="padding-block">
+    <p class="padding-block-400">
         Bei Interesse kontaktieren Sie mich bitte unter <%= mail_to "me@rudolfochristguitar.de" %>.
     </p>
 </section>
