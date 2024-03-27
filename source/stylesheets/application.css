@@ -141,6 +141,10 @@ a:focus-visible {
     color: var(--clr-accent-500);
 }
 
+em {
+    font-style: italic;
+}
+
 img.icon {
     height: 2rem;
 }
