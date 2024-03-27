@@ -2,4 +2,134 @@
 title: Sebastian Rudolfo Christ
 ---
 
-<h1>English version</h1>
+<section>
+    <div class="even-columns">
+        <div>
+            <div class="logo">
+                <%= image_tag "src-logo.svg", width: "360px", alt: "Sebastian Rudolfo Christ Logo" %>
+            </div>
+            <h2 class="text-center secondary-heading">Swingin'/Partyin' like it's 1935</h2>
+        </div>
+        <div>
+            <%= image_tag "me.jpg", width: "512px", alt: "Sebastian Rudolfo Christ plays guitar in a coffee shop." %>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h1 class="primary-heading">About</h1>
+    <div class="content">
+        <p class="padding-block-400">
+            Sebastian Rudolfo Christ has dedicated his musical work to
+            the music of Django Reinhardt and the Quintette du Hot
+            Club de France. He sets himself apart from the prevailing
+            jazz manouche by transporting the old sound to the present
+            day and bringing authenticity from his moustache to the
+            tips of his shoes.
+        </p>
+        <p class="padding-block-400">
+            Sebastian Rudolfo Christ is the third youngest member of
+            an old family of musicians from Worms and was therefore
+            born into a good situation to grow musically. However, it
+            was not until he was fifteen that he picked up a guitar
+            and began to learn the instrument. Due to his family
+            background, jazz, especially swing, had been a constant
+            companion since childhood and so it wasn't very long
+            before Sebastian Rudolfo Christ became acquainted with the
+            music of Stéphane Grappelli and Django Reinhardt, the
+            Quintette du Hot Club de France. However, all musical
+            ambitions were interrupted shortly afterwards by a serious
+            injury to his right hand. The guitar disappeared in her
+            suitcase.
+        </p>
+        <p class="padding-block-400">
+            One or two degrees in computer science later, Sebastian
+            Rudolfo Christ found himself in the south of
+            Spain. Separated from his family, he was probably in one
+            of the most beautiful places in the world, but basically
+            he felt very lonely. In this loneliness, he found joy in
+            music again, in jazz, the guitar and, of course, in the
+            music of Django Reihardt. Sebastian packed his things,
+            took his guitar and went back to Germany to work on his
+            old dream of making music in the style of Django Reinhardt
+            and the Quitnette du Hot Club de France.
+        </p>
+        <p class="padding-block-400">
+            He took lessons and attended workshops with Thomas Haag,
+            Rehan Syed, Gismo Graf, Wawau Adler and also
+            internationally with Samy Daussat and Romain Vuillemin in
+            Paris and within a very short time he managed to become
+            one of the most sought-after jazz manouche guitarists in
+            his region. Today, Sebastian Rudolfo Christ is deeply
+            networked in the scene and has had the honor of sharing
+            the stage with great musicians such as Samy Daussat, Mozes
+            Rosenberg, Samson and Dorado Schmitt.
+        </p>
+        <p class="padding-block-400">
+            Sebastian Rudolfo Christ is not just any jazz manouche
+            guitarist, but has dedicated himself like few others to
+            the old, unfiltered and traditional sound of Django
+            Reinhardt and the swing jazz of the 1930s. Let me show you
+            that the old swing jazz, the traditional jazz manouche,
+            the music of Django Reinhardt and the Hot Club de France
+            has lost none of its joie de vivre, energy and virtuoso
+            expression over the last 90 years. Let us take you on a
+            musical journey back in time to the 30s and 40s of the
+            twentieth century and celebrate the golden era of music
+            with us.
+        </p>
+        <p class="padding-block-400">
+            Translation provided by <%= link_to "DeepL", "https://www.deepl.com/translator" %>.
+        </p>
+    </div>
+</section>
+
+<section id="shows">
+    <h1 class="primary-heading">Upcoming Shows</h1>
+    <ul class="shows" role="list">
+        <% upcoming_events.each do |event| %>
+            <%= partial :show, locals: { event: event } %>
+        <% end %>
+    </ul>
+    <div class="padding-block-400">
+        <%= link_to "More shows...", "shows.html" %>
+    </div>
+</section>
+
+<section id="contact">
+    <h1 class="primary-heading">Contact</h1>
+    <p class="padding-block-400">
+        Booking requests via email to <%= mail_to "info@rudolfochristguitar.de" %>
+    </p>
+    <p class="padding-block-400">
+        Whether as a guitar duo, trio, quartet or quintet. Whether
+        accompanied by violin, clarinet or vocals. No matter if
+        birthday, wedding or company party. I offer musical
+        entertainment for every occasion. Talk to me!
+    </p>
+    <p class="padding-block-400">Eine Auswahl meiner Projekte:</p>
+    <div class="even-columns">
+        <div class="project">
+            <%= image_tag "miro-trio.jpg", alt: "Miro Trio Band Foto" %>
+            <h5 class="text-center padding-block-400">Miro Trio</h5>
+        </div>
+        <div class="project">
+            <% link_to "https://www.mainouche.de/" do %>
+                <%= image_tag "mainouche.jpg", alt: "Mainouche Band Foto" %>
+                <h5 class="text-center padding-block-400">Mainouche</h5>
+            <% end %>
+        </div>
+        <div class="project">
+            <% link_to "https://www.hotclubworms.de/" do %>
+                <%= image_tag "hcw.png", alt: "Hot Club Worms Logo", class: "bordered" %>
+                <h5 class="text-center padding-block-400">Hot Club Worms</h5>
+            <% end %>
+        </div>
+        <div class="project">
+            <% link_to "https://www.instagram.com/garedujazz4tet/" do %>
+                <%= image_tag "gdj.jpg", alt: "Gare du Jazz Band Foto-Collage" %>
+                <h5 class="text-center padding-block-400">Gare du Jazz</h5>
+            <% end %>
+        </div>
+    </div>
+</section>
