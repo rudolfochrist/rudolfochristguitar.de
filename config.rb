@@ -77,7 +77,6 @@ helpers do
   def events
     $all_events
       .sort_by(&:dtstart)
-      .reverse
   end
 
   def upcoming_events
