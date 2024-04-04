@@ -25,13 +25,9 @@
         </li>
         <li>
             <% if I18n.locale == :de %>
-                <% link_to "/en" do %>
-                    <%= image_tag "flag_uk.svg", alt: "Flag of UK icon", class: "icon" %>
-                <% end %>
+                DE / <%= link_to "EN", "/en" %>
             <% else %>
-                <% link_to "/de" do %>
-                    <%= image_tag "flag_de.svg", alt: "Flag of Germany icon", class: "icon" %>
-                <% end %>
+                <%= link_to "DE", "/de" %> / EN
             <% end %>
         </li>
     </ul>
