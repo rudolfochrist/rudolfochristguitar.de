@@ -5,12 +5,12 @@ require 'rrule'
 
 $all_events = []
 
+# live reload
+activate :livereload
+set :livereload_css_target, 'stylesheets/application.css'
 
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-activate :directory_indexes
-activate :i18n, mount_at_root: :false
+# Localization
+activate :i18n, mount_at_root: false
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
@@ -46,13 +46,6 @@ helpers do
     return "#{year_started} - #{current_year}"
   end
 
-  def active_nav(path)
-    if path == "/" and current_page.url == "/"
-      return "active"
-    end
-    return "active" if current_page.url.include? path
-  end
-
   def date_string(date)
     I18n.l date, format: :long
   end
@@ -84,7 +77,12 @@ helpers do
   def events
     $all_events
       .sort_by(&:dtstart)
-      .reverse
+  end
+
+  def upcoming_events
+    today = Date.today
+    events = $all_events.select {|event| event.dtstart >= today }
+    events.sort_by(&:dtstart)
   end
 
   def event_canceled?(event)
@@ -98,11 +96,6 @@ end
 
 # build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
 after_configuration do
 
   def event_description(event)
@@ -111,22 +104,17 @@ after_configuration do
     c.split("---").map(&:chomp)
   end
 
-  puts "Getting events"
-  ics = Net::HTTP.get(URI(ENV["ICS_URI"]))
-  ical = Icalendar::Calendar.parse(ics).first
-  last_year = Date.today.year - 1
-  next_year = Date.today.year + 1
-  $all_events = ical.events.select {|event|
-    event.dtstart.year >= last_year && event.dtstart.year < next_year && event_description(event).first != "i"
-  }
+  ics_uri = ENV["ICS_URI"]
 
-  ical.events.select { |event| !event.rrule.empty? }.each do |event|
-    rrule = RRule::Rule.new(event.rrule.first.value_ical)
-    next_date = rrule.all(limit: 1)
-    if !next_date.empty?
-      event.dtstart = next_date.first.change(hour: 20, min: 30)
-      # $all_events << event
-    end
+  unless ics_uri.nil? or ics_uri.empty?
+    puts "Getting events"
+    ics = Net::HTTP.get(URI(ics_uri))
+    ical = Icalendar::Calendar.parse(ics).first
+    last_year = Date.today.year - 1
+    next_year = Date.today.year + 1
+    $all_events = ical.events.select {|event|
+      event.dtstart.year >= last_year && event.dtstart.year < next_year && event_description(event).first != "i"
+    }
   end
 end
 
@@ -138,4 +126,3 @@ after_build do
     FileUtils.cp_r src, dest
   end
 end
-

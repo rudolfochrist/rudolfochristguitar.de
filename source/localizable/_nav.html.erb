@@ -1,0 +1,34 @@
+<nav class="primary-navigation" id="primary-navigation">
+    <ul aria-label="Primary" class="nav-list" role="list">
+        <% if hard_links %>
+            <li><%= link_to t(:home), "/" %></li>
+            <li><%= link_to t(:about), "/", anchor: "about" %></li>
+            <li><%= link_to t(:shows), "/", anchor: "shows" %></li>
+            <li><%= link_to t(:contact), "/", anchor: "contact" %></li>
+            <li><%= link_to t(:teaching), "/", anchor: "teaching" %></li>
+        <% else %>
+            <li><%= link_to t(:home), "#top", class: "anchor-link" %></li>
+            <li><%= link_to t(:about), "#about", class: "anchor-link" %></li>
+            <li><%= link_to t(:shows), "#shows", class: "anchor-link" %></li>
+            <li><%= link_to t(:contact), "#contact", class: "anchor-link" %></li>
+            <li><%= link_to t(:teaching), "#teaching", class: "anchor-link" %></li>
+        <% end %>
+        <li>
+            <% link_to "https://www.youtube.com/@rudolfochrist" do %>
+                <%= image_tag "youtube.svg", alt: "YouTube", class: "icon social-icon" %>
+            <% end %>
+        </li>
+        <li>
+            <% link_to "https://www.instagram.com/rudolfo.christ/" do %>
+                <%= image_tag "instagram.svg", alt: "Instagram", class: "icon social-icon" %>
+            <% end %>
+        </li>
+        <li>
+            <% if I18n.locale == :de %>
+                DE / <%= link_to "EN", "/en" %>
+            <% else %>
+                <%= link_to "DE", "/de" %> / EN
+            <% end %>
+        </li>
+    </ul>
+</nav>

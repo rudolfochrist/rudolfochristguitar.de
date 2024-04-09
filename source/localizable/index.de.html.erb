@@ -3,54 +3,191 @@ title: Sebastian Rudolfo Christ
 ---
 
 <section>
-    <p>
-        Sebastian <span class="emphasised">Rudolfo</span> Christ ist ein in Worms am Rhein ansässiger Jazz-Gitarrist und Kontrabassist.
+    <div class="even-columns">
+        <div>
+            <div class="logo">
+                <%= image_tag "src-logo.svg", width: "360px", alt: "Sebastian Rudolfo Christ Logo" %>
+            </div>
+            <h2 class="text-center secondary-heading">Swingin' like it's 1935</h2>
+        </div>
+        <div>
+            <%= image_tag "me.jpg", width: "512px", alt: "Sebastian Rudolfo Christ spielt Gitarre in einem Café." %>
+        </div>
+    </div>
+</section>
+
+<section class="mailing-list">
+    <div class="even-columns grid-flow-row">
+        <p class="text-center fw-bold">
+            Stets informiert mit dem Newsletter!
+        </p>
+        <div class="text-center">
+            <% link_to "https://seu2.cleverreach.com/f/385207-383586/" do %>
+                <button class="button">Hier abonnieren</button>
+            <% end %>
+        </div>
+        <p>
+            Informieren Sie sich über:
+        </p>
+        <ul class="mailing-list-details">
+            <li>Konzerte</li>
+            <li>Jam Sessions</li>
+            <li>Performaces</li>
+            <li>Workshops</li>
+            <li>Album Releases</li>
+            <li>und vieles mehr...</li>
+        </ul>
+    </div>
+</section>
+
+<section id="about">
+    <h1 class="primary-heading">Biographie</h1>
+    <div class="content">
+        <p class="padding-block-400">
+            Sebastian Rudolfo Christ hat sein musikalisches Wirken der
+            Musik Django Reinhardts und dem <em>Quintette du Hot Club de
+            France</em> verschrieben. Wie aktuell nur wenige
+            zeitgenössische Interpreten des Jazz manouche bevorzugt er
+            den alten, ungefilterten und traditionellen Sound, den er
+            authentisch vom Schnurrbart bis in die Schuhspitzen ins
+            Heute transportiert.
+        </p>
+        <p class="padding-block-400">
+            Sebastian Rudolfo Christ ist der drittjüngste Sproß einer
+            alten Wormser Musikerfamilie. Somit waren eigentlich gute
+            Vorraussetzungen gegeben, um musikalisch wachsen zu
+            können. Jedoch sollte es bis zu seinem fünfzehnten
+            Lebensjahr dauern, bis er eine Gitarre in die Hand nahm
+            und anfing, das Instrument zu erlernen. Familiär bedingt
+            war der Jazz, insbesondere der Swing, seit Kindheitstagen
+            an ein ständiger Begleiter und so dauerte es nicht sehr
+            lange, bis Sebastian Rudolfo Christ mit der Musik von
+            Stéphane Grappelli und Django Reinhard Bekanntschaft
+            machte.  Kurz darauf wurden allerdings sämtliche
+            musikalischen Ambitionen durch eine gravierende Verletzung
+            der rechten Hand auf Eis gelegt.  Die Gitarre verschwand
+            in ihrem Koffer.
+        </p>
+        <p class="padding-block-400">
+            Ein, zwei Studienabschlüsse in Informatik später fand sich
+            Sebastian Rudolfo Christ im Süden Spaniens wieder.  Dort,
+            an einem der schönsten Orte der Welt, ließ ihn die
+            geografische Distanz zu seiner Familie allerdings auch
+            zunehmend ein Gefühl der Einsamkeit empfinden.  Dies
+            änderte sich, als er aus dieser Stimmung heraus wieder
+            Freude an der Musik, am Jazz, der Gitarre und natürlich
+            auch an der Musik Django Reihardts fand. Sebastian packte
+            seine Sachen, nahm seine Gitarre und ging zurück nach
+            Deutschland, um dort an seinem alten Traum, Musik im Stile
+            Django Reinhardts und dem <em>Quintette du Hot Club de France</em>
+            spielen zu können, zu arbeiten.
+        </p>
+        <p class="padding-block-400">
+            Hierzu nahm er erneut Unterricht und vertiefte seine
+            vorhandenen Kenntnisse durch Workshops bei Thomas Haag,
+            Rehan Syed, Gismo Graf, Wawau Adler und auch international
+            bei Samy Daussat und Romain Vuillemin in Paris. So gelang
+            es ihm innerhalb kürzester Zeit zu einem der gefragtesten
+            Jazz manouche Gitarristen in seiner Region zu
+            werden. Heute ist Sebastian Rudolfo Christ tief in der
+            Szene vernetzt und hatte bereits die Ehre mit großartigen
+            Musiker wie Samy Daussat, Mozes Rosenberg, Samson und
+            Dorado Schmitt die Bühne zu teilen.
+        </p>
+        <p class="padding-block-400">
+            <em>
+                „Lassen Sie mich Ihnen zeigen, dass der alte Swing-Jazz,
+                der traditionelle Jazz manouche, die Musik Django
+                Reinhardts und dem Hot Club de France in den letzten 90
+                Jahre nichts an seiner Lebensfreude, seiner Energie und
+                virtuosen Ausdruck eingebüsst hat. Genießen Sie die
+                musikalische Zeitreise in die 30er und 40er Jahre des
+                zwanzigsten Jahrhunderts und feiern Sie die goldene Era
+                der Musik mit.“
+            </em>
+        </p>
+    </div>
+</section>
+
+<section id="shows">
+    <h1 class="primary-heading">Upcoming Shows</h1>
+    <ul class="shows" role="list">
+        <% upcoming_events.each do |event| %>
+            <%= partial :show, locals: { event: event } %>
+        <% end %>
+    </ul>
+    <div class="padding-block-400">
+        <%= link_to "Mehr Shows...", "shows.html" %>
+    </div>
+</section>
+
+<section id="contact">
+    <h1 class="primary-heading">Kontakt</h1>
+    <p class="padding-block-400">
+        Buchungsanfragen gerne per E-Mail an <%= mail_to "info@rudolfochristguitar.de" %>
     </p>
-    <p>
-        Sein Spezialgebiet sind die frühen Jazz-Stile der 20er und 30er Jahre des zwanzigsten Jahrhunderts. Sein Hauptaugenmerk
-        liegt hierbei auf der Musik Django Reinhardts, heute Jazz manouche genannt.
+    <p class="padding-block-400">
+        Ob als Gitarren-Duo, Trio, Quartett bis hin zum Quintett. Ob
+        begleitend mit Geige, Klarinette oder Gesang. Egal ob
+        Geburtstag, Hochzeit oder Firmenfeier. Ich biete musikalische
+        Unterhalten für jeden Anlass. Sprechen Sie mich an!
     </p>
-    <p>
-        Sebastian Rudolfo Christ spielt mit verschiedenen lokalen Ensembles
-        im Rhein-Neckar- und Rhein-Main-Gebiet, u.A.:
-        <dl>
-            <dt class="text-uppercase"><h4>Hot Club Worms</h4></dt>
-            <dd>
-                <%= link_to "Website", "https://hotclubworms.de", class: "text-right" %>
-            </dd>
-            <dt class="text-uppercase"><h4>Mainouche</h4></dt>
-            <dd>
-                <%= link_to "Website", "https://mainouche.de" %>
-            </dd>
-            <dt class="text-uppercase"><h4>Miro Trio/Miro Quartett</h4></dt>
-            <dd>
-                <p>
-                    Jazz manouche Trio mit fünf Instrumenten! Egal ob zwei Gitarren mit Bass oder Geige, Gitarre und
-                    Bass bzw. drei Gitarren gespielt werden, der Sound des Trios ist stets vielfältig und
-                    abwechslungsreich.
-                </p>
-                <p>
-                    Und wenn die volle Instrumentation verlangt wird, spielen wir als Miro Quartett!
-                </p>
-            </dd>
-            <dt class="text-uppercase"><h4>CLOS Duo</h4></dt>
-            <dd>
-                <p>
-                    Easy Listening Jazz Standards und Jazz-Pop  mit Gitarre, Kontrabass und Vocals.
-                </p>
-            </dd>
-            <dt class="text-uppercase"><h4>Rodolfo &amp; Rudolfo</h4></dt>
-            <dd>
-                <p>
-                    Jazz manouche Duo mit Geige und Gitarre.
-                </p>
-            </dd>
-            <dt class="text-uppercase"><h4>Shabbir/Chirst</h4></dt>
-            <dd>
-                <p>
-                    Jazz manouche Duo mit zwei Gitarren.
-                </p>
-            </dd>
-        </dl>
+    <p class="padding-block-400">Eine Auswahl meiner Projekte:</p>
+    <div class="even-columns">
+        <div class="project">
+            <%= image_tag "miro-trio.jpg", alt: "Miro Trio Band Foto" %>
+            <h5 class="text-center padding-block-400">Miro Trio</h5>
+        </div>
+        <div class="project">
+            <% link_to "https://www.mainouche.de/" do %>
+                <%= image_tag "mainouche.jpg", alt: "Mainouche Band Foto" %>
+                <h5 class="text-center padding-block-400">Mainouche</h5>
+            <% end %>
+        </div>
+        <div class="project">
+            <% link_to "https://www.hotclubworms.de/" do %>
+                <%= image_tag "hcw.png", alt: "Hot Club Worms Logo", class: "bordered" %>
+                <h5 class="text-center padding-block-400">Hot Club Worms</h5>
+            <% end %>
+        </div>
+        <div class="project">
+            <% link_to "https://www.instagram.com/garedujazz4tet/" do %>
+                <%= image_tag "gdj.jpg", alt: "Gare du Jazz Band Foto-Collage" %>
+                <h5 class="text-center padding-block-400">Gare du Jazz</h5>
+            <% end %>
+        </div>
+    </div>
+</section>
+
+<section id="teaching">
+    <h1 class="primary-heading">Unterricht</h1>
+    <p class="padding-block-400">
+        Gitarren Einzel- und Gruppenunterricht
+        <ul role="topics">
+            <li>Jazz Manouche</li>
+            <li>Swing</li>
+            <li>Traditional Jazz</li>
+        </ul>
+    </p>
+    <p class="padding-block-400" class="padding-block-400">
+        Der Unterricht vermittelt die folgenden Inhalte
+        <ul role="topics">
+            <li>korrekte Picking Technique (rest stoke technique)</li>
+            <li>Rhythmus und Begleitung</li>
+            <li>Akkorde und Chord Voicings</li>
+            <li>Improvisation</li>
+        </ul>
+    </p>
+    <p class="padding-block-400">
+        Grundkenntnisse an der Gitarre sollten vorhanden sein.
+    </p>
+    <p class="padding-block-400">
+        Meine didaktische Methode orientiert sich an der Chang/van Hemert-Methode und versucht mit so wenig musiktheoretischen Inhalten und ohne Noten die obigen Themenbereiche zu vermitteln. Das spielerische Ausprobieren und der Fokus auf das sofortige Umsetzen der Lerninhalte sorgt dafür, dass das Erlernte sich tief verwurzelt und gleich dem Erlernen einer Sprache in die Spielweise und den musikalischer Ausdruck einfließt.
+    </p>
+    <p class="padding-block-400">
+        Unterrichtsort ist Worms oder auf Wunsch an einem anderen Ort im näheren Einzugsgebiet. Unterricht vor Ort im Rhein-Main- oder Rhein-Neckar-Gebiet (Mannheim, Heidelberg, Mainz, etc.) ist ebenfalls gegen eine Anfahrtspauschale möglich.
+    </p>
+    <p class="padding-block-400">
+        Bei Interesse kontaktieren Sie mich bitte unter <%= mail_to "me@rudolfochristguitar.de" %>.
     </p>
 </section>
