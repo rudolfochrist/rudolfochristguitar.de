@@ -400,3 +400,7 @@ footer {
 .bordered {
     border: 0.125rem solid var(--clr-primary-800);
 }
+
+.underlined {
+    text-decoration: underline;
+}
