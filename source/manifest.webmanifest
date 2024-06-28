@@ -1,0 +1,7 @@
+{
+    "name": "Sebastian Rudolfo Christ",
+    "icons": [
+        { "src": "/icon-192-a2af2ba487d3ba4b3ff206b42759482c72169d39.png", "type": "image/png", "sizes": "192x192" },
+        { "src": "/icon-512-502f8d7d48ce519df70b9bcb4384d9f08e589a98.png", "type": "image/png", "sizes": "512x512" }
+    ]
+}
