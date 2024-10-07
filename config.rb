@@ -2,6 +2,7 @@ require 'date'
 require "net/http"
 require "icalendar"
 require 'rrule'
+require 'redcarpet'
 
 $all_events = []
 
@@ -51,9 +52,10 @@ helpers do
   end
 
   def event_description(event)
-    return [] if event.description.nil?
-    c = event.description.force_encoding(Encoding::UTF_8)
-    c.split("---").map(&:chomp)
+    return "" if event.description.nil?
+    description = event.description.force_encoding(Encoding::UTF_8)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new)
+    markdown.render(description)
   end
 
   def event_location(event)

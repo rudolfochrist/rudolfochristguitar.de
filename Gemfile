@@ -9,3 +9,5 @@ gem 'middleman-livereload'
 gem "icalendar", "~> 2.8"
 
 gem "rrule", "~> 0.5.0"
+
+gem "redcarpet", "~> 3.6"

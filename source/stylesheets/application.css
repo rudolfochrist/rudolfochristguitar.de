@@ -336,6 +336,10 @@ ol[role=topics]{
     text-decoration: line-through;
 }
 
+.shows .event.past-event a {
+    color: inherit;
+}
+
 .project img {
     width: 32rem;
     max-height: 32rem;

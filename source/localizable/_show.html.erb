@@ -2,7 +2,22 @@
     <li class="event <%= "past-event" if event.dtstart < Date.today %>">
         <p><%= date_string(event.dtstart) %></p>
         <p class="summary"><%= event_summary(event) %></p>
+        <p><%= event_description(event).last %></p>
         <p><%= event_location(event) %></p>
+    </li>
+<% elsif not event.description.to_s.empty? %>
+    <li class="event <%= "past-event" if event.dtstart < Date.today %>">
+        <p><%= date_string(event.dtstart) %></p>
+        <% link_to event_url(event) do %>
+            <p class="summary">
+                <%= event_summary(event) %>
+                <%= image_tag "link.svg", alt: "Link icon" %>
+            </p>
+        <% end %>
+        <%= event_description(event) %>
+        <p>
+            <%= event_location(event) %>
+        </p>
     </li>
 <% else %>
     <% link_to event_url(event) do %>
