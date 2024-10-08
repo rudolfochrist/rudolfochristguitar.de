@@ -408,3 +408,7 @@ footer {
 .underlined {
     text-decoration: underline;
 }
+
+.text-justified {
+    text-align: justify;
+}
