@@ -12,6 +12,7 @@
         <link href="/favicon-4c4afe4f187aeecfc5af3e2937f3753be0a43c25.ico" rel="icon" sizes="32x32" />
         <link href="/icon-1416b554e8cc81e0998027f65e52434ce845eb93.svg" rel="icon" type="image/svg+xml" />
         <link href="/apple-touch-icon-c0944ac51cc119cad33725ba85b87df6b24b848c.png" rel="apple-touch-icon"/>
+        <%= stylesheet_link_tag "iframemanager" %>
         <%= stylesheet_link_tag "cookieconsent" %>
         <%= stylesheet_link_tag "application" %>
     </head>
@@ -38,6 +39,7 @@
                 </ul>
             </footer>
         </div>
+        <%= javascript_include_tag "iframemanager" %>
         <%= javascript_include_tag "cookieconsent" %>
         <%= javascript_include_tag "application" %>
     </body>

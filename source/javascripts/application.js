@@ -25,6 +25,7 @@ anchorLinks.forEach(link => {
   });
 });
 
+const im = iframemanager();
 
 CookieConsent.run({
   categories: {
@@ -32,7 +33,15 @@ CookieConsent.run({
       enabled: true,
       readOnly: true
     },
-    videos: {}
+    videos: {
+      services: {
+        youtube: {
+          label: "YouTube",
+          onAccept: () => im.acceptService('youtube'),
+          onReject: () => im.rejectService('youtube')
+        }
+      }
+    }
   },
 
   language: {
@@ -65,7 +74,7 @@ CookieConsent.run({
             },
             {
               title: 'Videos',
-              description: "Eingebundene Videos von YouTube. Mit der Auswahl dieser Kategorie erlauben Sie Cookies und Skipte von YouTube.",
+              description: "Eingebundene Videos von externen Video-Diensten.",
               linkedCategory: 'videos'
             },
           ]
@@ -97,10 +106,44 @@ CookieConsent.run({
             },
             {
               title: 'Videos',
-              description: 'Embedded videos hosted on YouTube. By selecting videos you allow cookies and scripts by YouTube.',
+              description: 'Embedded videos hosted on external video services.',
               linkedCategory: 'videos'
             },
           ]
+        }
+      }
+    }
+  }
+});
+
+
+im.run({
+  onChange: ({ changedServices, eventSource }) => {
+    if(eventSource.type === 'click') {
+      const servicesToAccept = [
+        ...CookieConsent.getUserPreferences().acceptedServices['videos'],
+        ...changedServices
+      ];
+
+      CookieConsent.acceptService(servicesToAccept, 'videos');
+    }
+  },
+  autoLang: true,
+  services: {
+    youtube: {
+      embedUrl: 'https://www.youtube-nocookie.com/embed/{data-id}',
+      iframe: {
+        allow: 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen;',
+      },
+
+      languages: {
+        de: {
+          notice: 'Dieser Inhalt ist bei einem Drittanbieter gehosted. Wenn Sie diesen Inhalt laden, akzeptieren Sie die <a rel="noreferrer noopener" href="https://www.youtube.com/t/terms" target="_blank">Nutzungsbedingungen</a> von youtube.com',
+          loadAllBtn: 'Akzeptieren'
+        },
+        en: {
+          notice: 'This content is hosted by a third party. By showing the external content you accept the <a rel="noreferrer noopener" href="https://www.youtube.com/t/terms" target="_blank">terms and conditions</a> of youtube.com.',
+          loadAllBtn: 'Accept'
         }
       }
     }
