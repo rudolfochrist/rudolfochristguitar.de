@@ -1,5 +1,5 @@
 <!doctype html>
-<html id="top" lang="de">
+<html id="top" lang="<%= I18n.locale %>">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -12,6 +12,7 @@
         <link href="/favicon-4c4afe4f187aeecfc5af3e2937f3753be0a43c25.ico" rel="icon" sizes="32x32" />
         <link href="/icon-1416b554e8cc81e0998027f65e52434ce845eb93.svg" rel="icon" type="image/svg+xml" />
         <link href="/apple-touch-icon-c0944ac51cc119cad33725ba85b87df6b24b848c.png" rel="apple-touch-icon"/>
+        <%= stylesheet_link_tag "cookieconsent" %>
         <%= stylesheet_link_tag "application" %>
     </head>
     <body>
@@ -33,9 +34,11 @@
                     <li>&copy; <%= year_range %> Sebastian Rudolfo Christ</li>
                     <li><%= link_to t(:imprint), "imprint.html" %></li>
                     <li><%= link_to t(:privacy_policy), "privacy-policy.html" %></li>
+                    <li><%= link_to t(:cookie_preferences), "javascript: false;", data: { cc: "show-preferencesModal" } %></li>
                 </ul>
             </footer>
         </div>
+        <%= javascript_include_tag "cookieconsent" %>
         <%= javascript_include_tag "application" %>
     </body>
 </html>
