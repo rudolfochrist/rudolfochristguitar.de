@@ -270,6 +270,9 @@ section {
     margin-bottom: var(--size-400);
 }
 
+.mailing-list-text {
+    text-align: center;
+}
 
 @media(min-width: 50em) {
     .mailing-list-details {
@@ -283,6 +286,10 @@ section {
 
     .mailing-list-details li {
         flex: auto;
+    }
+
+    .mailing-list-text {
+        text-align: left;
     }
 }
 
@@ -413,3 +420,5 @@ footer {
 .text-justified {
     text-align: justify;
 }
+
+.mt-400 { margin-top: var(--size-400); }
