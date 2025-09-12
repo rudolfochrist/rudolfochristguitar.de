@@ -361,9 +361,10 @@ footer {
 
 .container {
     --max-width: 79ch;
+    --width: min(var(--max-width), 100% - var(--padding) * 2);
     --padding: 1rem;
 
-    width: min(var(--max-width), 100% - var(--padding) * 2);
+    width: var(--width);
     margin-inline: auto;
 }
 
@@ -422,3 +423,12 @@ footer {
 }
 
 .mt-400 { margin-top: var(--size-400); }
+
+
+/* https://css-tricks.com/full-width-containers-limited-width-parents/ */
+@media (min-width: 65em) {
+    .full-width {
+        margin-left: calc(-100vw / 2 + 65em / 2);
+        margin-right: calc(-100vw / 2 + 65em / 2);
+    }
+}
